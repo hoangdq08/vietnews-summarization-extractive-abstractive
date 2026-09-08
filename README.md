@@ -59,11 +59,20 @@ Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 
 ## Demo
 
-Sau khi có `preds.json`:
+Local:
 
 ```bash
 python app/demo.py
 ```
+
+Docker (cùng giao diện, cổng 7860):
+
+```bash
+docker build -t vietnews-demo .
+docker run --rm -p 7860:7860 vietnews-demo
+```
+
+Mở http://127.0.0.1:7860
 
 ## Nộp
 

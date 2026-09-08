@@ -70,7 +70,17 @@ def main():
         picker.change(run, inputs=picker, outputs=[title, gold, lead_box, tr_box, vit5_box])
         demo.load(run, inputs=picker, outputs=[title, gold, lead_box, tr_box, vit5_box])
 
-    demo.launch(server_name="127.0.0.1", server_port=7860, inbrowser=True)
+    in_docker = Path("/.dockerenv").exists()
+    if in_docker:
+        import gradio.networking as gn
+
+        gn.url_ok = lambda _url: True
+    demo.launch(
+        server_name="0.0.0.0" if in_docker else "127.0.0.1",
+        server_port=7860,
+        share=False,
+        inbrowser=not in_docker,
+    )
 
 
 if __name__ == "__main__":

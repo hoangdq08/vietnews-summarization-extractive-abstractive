@@ -1,0 +1,10 @@
+.git
+.venv
+__pycache__
+*.pyc
+.ipynb_checkpoints
+notebooks
+slides
+report
+*.md
+!README.md
