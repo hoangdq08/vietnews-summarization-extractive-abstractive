@@ -84,8 +84,12 @@ function card(slide, x, y, w, h, fill) {
     x: 0.7, y: 4.3, w: 3.2, h: 0, line: { color: C.accent, width: 2 },
   });
   s.addText("Lead-3  ·  TextRank  ·  ViT5 (checkpoint VietAI, không fine-tune)\n100 bài test đầu  ·  ROUGE-1/2/L  ·  đọc tay 20 bài", {
-    x: 0.7, y: 4.55, w: 11, h: 0.7,
+    x: 0.7, y: 4.45, w: 11, h: 0.7,
     fontFace: FONT.sans, fontSize: 15, color: C.body, margin: 0,
+  });
+  s.addText("Nhóm 14\nNguyễn Trí Toàn  26410135    ·    Nguyễn Văn Thái  26410108    ·    Đỗ Quốc Hoàng  26410043", {
+    x: 0.7, y: 5.3, w: 12, h: 0.7,
+    fontFace: FONT.sans, fontSize: 14, color: C.ink, margin: 0,
   });
   s.addText("GitHub: hoangdq08/vietnews-summarization-extractive-abstractive", {
     x: 0.7, y: 6.55, w: 11, h: 0.3,

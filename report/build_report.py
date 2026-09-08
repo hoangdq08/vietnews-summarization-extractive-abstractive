@@ -50,7 +50,11 @@ def styles():
         ),
         "cover_sub": ParagraphStyle(
             "cover_sub", fontName="ArialUni", fontSize=11, leading=16,
-            textColor=ACCENT, alignment=TA_CENTER, spaceAfter=18,
+            textColor=ACCENT, alignment=TA_CENTER, spaceAfter=12,
+        ),
+        "cover_names": ParagraphStyle(
+            "cover_names", fontName="ArialUni", fontSize=11, leading=17,
+            textColor=INK, alignment=TA_CENTER, spaceAfter=8,
         ),
         "h1": ParagraphStyle(
             "h1", fontName="ArialUni", fontSize=14, leading=18,
@@ -138,8 +142,14 @@ def story():
         P("A comparative study of extractive and abstractive summarization on Vietnews", S["cover_sub"]),
         P("Lead-3 · TextRank · ViT5 (checkpoint VietAI, không fine-tune)<br/>100 bài test đầu · ROUGE-1/2/L · đọc tay 20 bài", S["cover_sub"]),
         Spacer(1, 24),
+        P("Nhóm 14", S["cover_kicker"]),
+        P(
+            "Nguyễn Trí Toàn — 26410135<br/>"
+            "Nguyễn Văn Thái — 26410108<br/>"
+            "Đỗ Quốc Hoàng — 26410043",
+            S["cover_names"],
+        ),
         P("GitHub: github.com/hoangdq08/vietnews-summarization-extractive-abstractive", S["caption"]),
-        P("Nhóm điền tên / MSSV trên bản nộp.", S["caption"]),
         PageBreak(),
     ]
 
