@@ -49,7 +49,19 @@ Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 | TextRank | 0.2428 | 0.1100 | 0.1730 |
 | ViT5 | 0.2664 | 0.1341 | 0.2084 |
 
-ROUGE-1 theo độ dài thân bài (ngưỡng 300/500 từ, ~33 bài/nhóm):
+Extractive trên **500 bài** (`000001`–`000500`, chưa có ViT5-500):
+
+| Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
+|---|---|---|---|
+| Lead-1 | 0.2719 | 0.1305 | 0.2092 |
+| Lead-3 | 0.2569 | 0.1294 | 0.1856 |
+| Lead-5 | 0.2256 | 0.1199 | 0.1624 |
+| TextRank-3 | 0.2499 | 0.1198 | 0.1815 |
+| Oracle-3 | 0.4646 | 0.2793 | 0.3410 |
+
+Lead-1 > Lead-3: gold gần câu mở đầu. Oracle-3 ≈ 0.46: vẫn còn 3 câu trong bài khớp gold hơn Lead-3. ViT5-500: chạy `notebooks/kaggle_abstractive_500.ipynb`, để `results/preds_500.json`, rồi `python src/run_eval_500.py`.
+
+ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhóm):
 
 | Nhóm | n | Lead-3 | TextRank | ViT5 |
 |---|---|---|---|---|

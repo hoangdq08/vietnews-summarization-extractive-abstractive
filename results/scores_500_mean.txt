@@ -1,0 +1,10 @@
+ROUGE F1, n=500, id 000001–000500, '_' → space.
+max sentences/doc = 39
+
+Lead-1       rouge1=0.2719  rouge2=0.1305  rougeL=0.2092  n=500
+Lead-3       rouge1=0.2569  rouge2=0.1294  rougeL=0.1856  n=500
+Lead-5       rouge1=0.2256  rouge2=0.1199  rougeL=0.1624  n=500
+TextRank-3   rouge1=0.2499  rouge2=0.1198  rougeL=0.1815  n=500
+Oracle-3     rouge1=0.4646  rouge2=0.2793  rougeL=0.3410  n=500
+
+ViT5: chưa có results/preds_500.json — chạy notebooks/kaggle_abstractive_500.ipynb

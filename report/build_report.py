@@ -265,6 +265,30 @@ def story():
             "TextRank không thắng nhóm nào trên R-1. Đây là quan sát trên 100 bài, không suy nguyên nhân chắc.",
             S["body"],
         ),
+        P("6.2. Extractive trên 500 bài (Lead-k và Oracle)", S["h2"]),
+        P(
+            "Cùng split test, id 000001–000500. Oracle-3 chọn tổ hợp 3 câu trong bài làm ROUGE-1 F1 với gold lớn nhất "
+            "(tối đa 39 câu/bài). ViT5 trên 500 bài chưa chạy.",
+            S["body"],
+        ),
+        P("Bảng 1c. ROUGE F1 extractive, n=500.", S["caption"]),
+        make_table(
+            [
+                ["Hệ", "ROUGE-1", "ROUGE-2", "ROUGE-L"],
+                ["Lead-1", "0,2719", "0,1305", "0,2092"],
+                ["Lead-3", "0,2569", "0,1294", "0,1856"],
+                ["Lead-5", "0,2256", "0,1199", "0,1624"],
+                ["TextRank-3", "0,2499", "0,1198", "0,1815"],
+                ["Oracle-3", "0,4646", "0,2793", "0,3410"],
+            ],
+            [4.2 * cm, 3.5 * cm, 3.5 * cm, 3.5 * cm],
+        ),
+        Spacer(1, 8),
+        P(
+            "Lead-1 > Lead-3 > Lead-5: gold gần câu mở đầu; lấy thêm câu làm giảm overlap n-gram. "
+            "Oracle-3 ≈ 0,46 trong khi Lead-3 ≈ 0,26: extractive còn cửa, Lead-3 chưa chọn đúng câu.",
+            S["body"],
+        ),
         P("7. Phân tích lỗi (20 bài đọc tay)", S["h1"]),
         P(
             "Đối chiếu gold với ba hệ trên 20 id rải trong test-100 "
