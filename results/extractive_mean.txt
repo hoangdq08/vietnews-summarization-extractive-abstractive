@@ -1,0 +1,7 @@
+ROUGE F1, 100 bài test đầu (000001–000100), tokenizer = split khoảng trắng (dữ liệu đã tách từ).
+
+Lead-3    rouge1=0.2375  rouge2=0.1030  rougeL=0.1804
+TextRank  rouge1=0.2292  rouge2=0.0820  rougeL=0.1668
+
+Đây là số đo trên máy local ngày 1. Chưa có ViT5. Không so với bảng paper.
+Lead-3 ≥ TextRank trên tập này — tin tức thường gửi ý chính ở đầu; gold là abstract tách khỏi thân bài.

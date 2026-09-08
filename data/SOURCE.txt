@@ -1,0 +1,9 @@
+Nguồn: https://github.com/ThanhChinhBK/vietnews
+Split dùng: data/test_tokenized
+Cách lấy: 100 file đầu theo tên (000001.txt.seg … 000100.txt.seg)
+Định dạng mỗi file (tách bằng dòng trống):
+  1) tiêu đề
+  2) tóm tắt mẫu (abstract)
+  3+) thân bài
+Dữ liệu đã tách từ sẵn (dấu _). Không gọi lại underthesea trên tập này.
+Ngày clone: 2026-09-08

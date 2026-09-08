@@ -1,0 +1,4 @@
+extractive_scores.csv: Lead-3 vs TextRank trên 100 bài test đầu.
+extractive_preview.json: 10 bài (đọc tay ngày 1).
+extractive_preview_100.json: đủ 100 bài.
+preds.json: chưa có — chạy notebooks/kaggle_abstractive.ipynb rồi tải về đây.
