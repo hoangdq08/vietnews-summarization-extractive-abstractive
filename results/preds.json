@@ -1,0 +1,502 @@
+[
+  {
+    "id": "000001.txt.seg",
+    "abstract": "Ngày 25/2 , TAND TP. Đà_Nẵng tuyên_phạt Hồ_Xuân_Huy ( SN 1994 ) , ngụ quận Hải_Châu , 12 năm tù về tội Lừa_đảo chiếm_đoạt tài_sản .",
+    "pred": "Để có tiền sử_dụng cá nhân, sĩ quan công an Bùi Quang Huy ( tức Vũ \" nhôm \" ) đã lừa và chiếm đoạt 3,2 tỷ đồng của nhiều người."
+  },
+  {
+    "id": "000002.txt.seg",
+    "abstract": "Phát_hiện nam thanh_niên đang thủ_dâm trên xe_buýt , nhiều hành_khách đã giữ nam thanh_niên này lại và thông_báo sự_việc tới lực_lượng chức_năng để xử_lý .",
+    "pred": "Sau khi xác minh, cơ quan chức năng xác định không có hành_vi dâm_ô trong trường hợp nam thanh_niên có hành_vi tương tự trên xe_buýt và đề nghị gia đình bảo về nhà."
+  },
+  {
+    "id": "000003.txt.seg",
+    "abstract": "“ Baby_Support ” và “ Hello baby ” là hai cái tên đang làm_mưa_làm_gió trên mạng xã_hội ( MXH ) với công_dụng hỗ_trợ có_thể sinh con_trai hay gái tuỳ theo ý_muốn . Vậy thực_hư loại thuốc lạ này như_thế_nào ?",
+    "pred": "Các bà mẹ bỉm sữa hiện đang đua nhau quảng bá một loại dung dịch hỗ_trợ sinh con hiệu quả trên mạng xã hội với lời quảng cáo như thần dược. Sự thật thì các loại dung dịch này có chất lượng tốt, nếu khéo léo tận dụng thì sẽ thành công."
+  },
+  {
+    "id": "000004.txt.seg",
+    "abstract": "Liên_quan đến vụ gây_rối tại trạm thu phí trên đường_cao_tốc TP. HCM - Long_Thành - Dầu_Giây vào chiều 10/2 , VEC tuyên_bố cấm vĩnh_viễn phục_vụ 2 phương_tiện trên các tuyến đường đơn_vị này khai_thác .",
+    "pred": "Liên quan đến việc VEC quyết định từ 'chối vĩnh_viễn hai xe ô tô đi lại trên đường cao tốc TP. HCM - Long_Thành - Dầu_giây gây ùn tắc giao thông cục bộ, LS Trương -Thanh_Đức, công ty Luật BASICO khẳng định đây là việc làm vô cùng 'lý'và nực cười."
+  },
+  {
+    "id": "000005.txt.seg",
+    "abstract": "Bà Huỳnh_Ngọc_Bích được mọi người biết đến là “ nữ_hoàng lục_bình ” đã được VKSND tỉnh Sóc_Trăng xin_lỗi công_khai vì đã gây ra oan sai suốt 9 năm .",
+    "pred": "Sáng 28/5, lãnh đạo VKSND tỉnh Sóc_Trăng đã tổ chức xin lỗi công khai đối với bà Huỳnh_Ngọc_Bích, Giám đốc hợp tác xã Ngọc_Bích, người bị buộc tội tham nhũng."
+  },
+  {
+    "id": "000006.txt.seg",
+    "abstract": "Bằng trả phòng và tính tiền thì xảy ra mâu_thuẩn với chủ nhà_trọ . Sau đó , Bằng đã dùng dao đâm chết nạn_nhân cướp máy_tính bảng rồi mang đi bán 700.000 đồng và bỏ trốn .",
+    "pred": "Đến thuê phòng nghỉ sau đó trả phòng, Bằng cầm dao đâm chết chủ nhà trọ rồi cướp tài sản đi bán lấy tiền."
+  },
+  {
+    "id": "000007.txt.seg",
+    "abstract": "Cơ_quan điều_tra xác_định , vụ tai_nạn chìm tàu khiến 9 người thiệt_mạng trên vùng_biển Cần_Giờ 5 năm trước có trách_nhiệm của ông Đảo và Quyết nên đề_nghị truy_tố 2 người này .",
+    "pred": "Vụ chìm tàu xảy ra tại huyện Cần Giờ ( TP. HCM ) là do tàu chở quá số người cho_phép, sử dụng sai công_dụng và đi vào vùng_biển Cần Giờ là vùng không được phép hoạt động."
+  },
+  {
+    "id": "000008.txt.seg",
+    "abstract": "Bị_cáo Tuyết bị cấp sơ_thẩm 2 lần tuyên_phạt 12 năm tù . Bị_cáo Tuyết kháng_cáo , nên 2 lần vụ án được đưa ra xét_xử phúc_thẩm và đều có chung 1 kết_quả , huỷ_án …",
+    "pred": "Bị 'cáo'Tuyết kháng cáo kêu oan và được toà đưa ra xét xử theo thủ tục chung, nhưng vẫn chưa  định  được số phận của bị cáo ."
+  },
+  {
+    "id": "000009.txt.seg",
+    "abstract": "Lực lượng hùng hậu được trang bị bộ đàm cùng các trang thiết bị phục vụ việc cảnh giới , bảo vệ vòng trong , vòng ngoài , sới bạc lưu động với hình thức tổ chức chuyên nghiệp khiến các cảnh sát đau đầu trong suốt quá trình đánh án .",
+    "pred": "Phòng Cảnh sát hình sự Công an tỉnh Hà Tĩnh vưa phá thành công môt đương dây đánh bạc nghìn đô, quy mô lơn nhât trong lịch sư tỉnh này. Hàng chục \" con bạc \" đã bị băt giư, bắt giư, tịch thu hàng trăm triêu đông và tang vật."
+  },
+  {
+    "id": "000010.txt.seg",
+    "abstract": "Khi đi thả lưới , người_dân hoảng_hốt phát_hiện thi_thể không đầu , không chân . Ngay sau đó , người_dân trình_báo sự_việc đến cơ_quan_chức_năng .",
+    "pred": "Khi đang thả lưới ở lòng'sông thuỷ 'điện Sông_Tranh 2, người dân hoảng hốt phát hiện thi thể 1 thi thể trơ xương, không có phần đầu và chân."
+  },
+  {
+    "id": "000011.txt.seg",
+    "abstract": "Nguyễn_Văn_Tú đã thuê xe chở cả một chiếc máy_ủi tại khu_công_nghiệp đem đi mà không ai hay_biết . Sau khi bán được xe mà không mất chút công_sức , đối_tượng dùng tiền tiêu_xài và mua một sợi dây_chuyền vàng .",
+    "pred": "Sau khi trộm được xe bồn, Tú gọi điện thuê người đến sửa chữa. Khi đang chờ người này mang giấy tờ liên quan đến thì đối tượng này bỗng dưng xuất hiện."
+  },
+  {
+    "id": "000012.txt.seg",
+    "abstract": "Sau khi gây tai_nạn khiến 3 người bị_thương nặng , tài_xế nhanh_chóng bỏ trốn . Những_tưởng manh_mối truy bắt đối_tượng rơi vào ngõ_cụt thế nhưng từ chiếc kia morning đời cũ , Công_an huyện Cẩm_Xuyên đã lần theo được dấu_vết …",
+    "pred": "Dần được xác định là tài_xế đã gây ra vụ tai_nạn giao thông nghiêm trọng, khiến 03 người bị_thương nặng rồi bỏ trốn vào 21h45 tối ngày 26/8."
+  },
+  {
+    "id": "000013.txt.seg",
+    "abstract": "Liên_quan vụ 2 vợ_chồng bị giết ở Hưng_Yên , nghi_phạm Đinh_Công_Tráng đã khai nhận về phút đối_mặt với các nạn_nhân .",
+    "pred": "Trong quá trình bị bắt, nghi phạm Đinh_C Công_Tráng rất ngoan_cố, quanh co, chối tội. Hắn thường xuyên đi lang_thang để xem gia_đình nào sơ hở, không khoá cửa thì đột_nhập vào nhà để trộm đồ_sản. Nếu là lấy cắp được đồ_sản thì đem bán lấy tiền ăn_tiêu."
+  },
+  {
+    "id": "000014.txt.seg",
+    "abstract": "Liên_quan đến vụ_việc phá rừng xảy ra tại tiểu_khu 500 ( xã Hiếu , huyện Kon_Plông , tỉnh Kon_Tum ) , hạt kiểm_lâm huyện này đã ra quyết_định khởi_tố vụ án .",
+    "pred": "Một vụ phá rừng nghiêm trọng vừa xảy ra tại tỉnh Kon_Tum, nguyên nhân chính là nhóm lâm tặc lợi dụng thời gian dài \" trà trộn \" vào khai thác gỗ trái phép, phá rừng tại tiểu_khu 500, xã Hiếu ( huyện Kon_Plông, tỉnh Kon_long )."
+  },
+  {
+    "id": "000015.txt.seg",
+    "abstract": "Đến nhà em vợ , Huấn rút dao_thủ sẵn đâm anh C. , dù đã được đưa đi cấp_cứu nhưng do vết_thương quá nặng nạn_nhân đã không qua khỏi .",
+    "pred": "Nghe tiếng gọi cửa, anh rể chạy ra mở cửa thì bất ngờ bị người em vợ đang bị nạn nhân đâm tử vong."
+  },
+  {
+    "id": "000016.txt.seg",
+    "abstract": "Sống với nhau như vợ_chồng nhưng không đăng_ký kết_hôn , đến khi chia_tay , Cường giành quyền nuôi con không được nên đã mang xăng đến cửa_hàng của “ vợ ” để đốt . Đối_tượng đang bị cơ_quan công_an truy bắt .",
+    "pred": "Một nam thanh niên mặc áo \"khoác đen \", quần nâu đi giày trắng, đeo khẩu trang đến trước cửa nhà số 10 ngõ Hoàng_Quý, phường Trần_Nguyên_Hãn vô cùng hoảng loạn khi một nam thanh niên đến tẩm xăng rồi châm lửa đốt nhà, thản_nhiên bỏ đi."
+  },
+  {
+    "id": "000017.txt.seg",
+    "abstract": "Người_dân sống tại thôn Ải , xã Di_Trạch ( Hoài_Đức , Hà_Nội ) vẫn không khỏi bàng_hoàng khi kể lại giây_phút phát_hiện thi_thể nam thanh_niên trong tư_thế treo_cổ , hai tay bị trói .",
+    "pred": "\" Đây là lần đầu_tiên tại thôn phát_hiện có người treo cổ lên cột điện cao như thế, có_thể anh này thuộc trường hợp cho vay nặng_lãi \" - một người dân tại thôn Ải, xã Di_Trạch, Hoài_Đức, Hà_Nội chia sẻ."
+  },
+  {
+    "id": "000018.txt.seg",
+    "abstract": "Thời_gian qua , dư_luận xã_hội rúng_động bởi nhiều vụ_việc giết người thương_tâm , mà người gây án lại có dấu_hiệu của bệnh trầm_cảm . Vậy với những trường_hợp này , người gây án có phải chịu trách_nhiệm hình_sự ?",
+    "pred": "Những vụ án nổi tiếng liên quan tới bệnh trầm trọng ở Việt Nam đang được dư luận đặc biệt quan tâm. Theo luật_sư Giang_Hồng_Thanh, bệnh trầm trọng là bệnh phổ biến trong xã hội hiện nay, tuy không có dấu hiệu di căn, nhưng căn cứ vào kết luận giám_định của cơ quan tố tụng thì có thể quyết định người đó có phải chịu trách nhiệm hình sự hay không."
+  },
+  {
+    "id": "000019.txt.seg",
+    "abstract": "Trong đêm mưa , công_an tiếp_nhận tin trình_báo của một người đàn_ông cho_rằng vừa bị cướp chém đứt gân tay để cướp xe . Vào_cuộc điều_tra , công_an phát_hiện phía sau tin trình_báo trên là một sự_thật đau_lòng .",
+    "pred": "Sau khi bị 2 đối tượng lạ mặt chém đứt gân tay, người đàn ông này cũng khai, bị con trai của đối tượng chém đứt 3 ngón tay."
+  },
+  {
+    "id": "000020.txt.seg",
+    "abstract": "Cơ_quan công_an đã sàng_lọc hàng trăm đối_tượng khác nhau , từ những hình_ảnh nhận_dạng của nhân_chứng và hình_ảnh camera an_ninh xung_quanh khu_vực ....",
+    "pred": "Lực_lượng chức_năng Công an tỉnh Bình_Dương đã phát hiện manh mối từ chiếc xe và nhóm nghi \" can \", cùng với 1 số máy quay tại hiện trường để tìm 2 thi_thể trong thùng bê_tông."
+  },
+  {
+    "id": "000021.txt.seg",
+    "abstract": "Đến nhà bạn gái chơi thì xảy ra mâu_thuẫn , Nguyễn_Văn_Được ngụ xã Kiến_Bình , Tân_Thạnh ( Long_An ) dùng dây dù siết cổ bạn gái đến chết rồi bỏ đi .",
+    "pred": "Đến nhà bạn gái chơi, Nguyễn \"Văn \" được cho là đã dùng dây dù siết cổ bạn gái đến chết rồi bỏ đi."
+  },
+  {
+    "id": "000022.txt.seg",
+    "abstract": "Trên đường đi mua kính , 2 cô_gái bất_ngờ gặp nhóm thanh_niên đi xe_máy trêu_ghẹo . Không lâu sau , 2 thanh_niên này gọi thêm người đến đánh 2 cô_gái phải nhập_viện .",
+    "pred": "Thấy 2 thanh_niên đi xe_máy đuổi theo và trêu_ghẹo, hai cô gái dừng xe trước Bệnh viện 108 và lên tiếng chống trả thì bị một nhóm thanh mới lao tới đánh hội 'đồng '."
+  },
+  {
+    "id": "000023.txt.seg",
+    "abstract": "Sau khi dùng kéo đâm chết nạn_nhân , Nhựt nhanh_chóng rời khỏi hiện_trường , bỏ trốn và bị cơ_quan công_an phát lệnh truy_nã . Hơn 2 tháng lẩn_trốn , Nhựt bị trinh_sát bắt_giữ .",
+    "pred": "Theo cơ quan điều tra, Nhựt đã bị lực lượng chức năng tỉnh Đồng \"Tháp \" bắt giữ khi đang lẩn trốn tại thị xã Tân_Hồng."
+  },
+  {
+    "id": "000024.txt.seg",
+    "abstract": "Còn có đồng_phạm nào khác trong vụ môi_giới mại_dâm nghìn đô của Kiều_Đại_Dũ ? Theo lời khai của “ tú ông ” 9X dần hé lộ những kẻ môi_giới núp sau hai tài_khoản zalo là “ Thanh_Thanh ” và “ Bảo_Bảo ” .",
+    "pred": "Khai với toà, Kiều_Đại_Dũ nói chỉ có \" đào \" gái bán_dâm, không chỉ có Á hậu, MC nổi tiếng, mà trong đường'đào'gái bán_dâm của Dũ còn có Á hậu, MC nổi tiếng."
+  },
+  {
+    "id": "000025.txt.seg",
+    "abstract": "Tranh giành chiếc xe cầm cố , 2 nhóm đối tượng xảy ra mâu thuẫn dẫn đến đánh nhau khiến 1 nạn nhân bị súng bắn mù 2 mắt , 2 người còn lại bị thương nặng .",
+    "pred": "Khiêp sơ, các nhóm thanh niên lâp trang bị súng điên cao su, súng bắn đạn cao su và tiên thưc xông vào hôn chiên. Vụ viêc xảy ra tại Đức_Thọ, tỉnh Hà Tĩnh."
+  },
+  {
+    "id": "000026.txt.seg",
+    "abstract": "Theo nguồn_tin riêng của phóng_viên báo Người Đưa_Tin , cơ_quan điều_tra bộ Công_an vừa khởi_tố , bắt tạm giam ông Lê_Tấn_Hùng , nguyên Tổng_Giám_đốc tổng_công_ty Nông_nghiệp Sài_Gòn TNHH Một thành_viên ( SAGRI ) .",
+    "pred": "Ông Lê_Tấn_Hùng, nguyên Tổng Giám đốc tổng công ty Nông nghiệp Sài_Gòn TNHH Một thành viên ( SAGRI ) bị bắt tạm giam về tội Vi_phạm quy định về quản_lý, sử_dụng tài_sản Nhà nước gây thất thoát, lãng phí."
+  },
+  {
+    "id": "000027.txt.seg",
+    "abstract": "Khi đang giao_nhận vó bò để làm hàng ăn , ông H. đã bị một đối_tượng tại axit vào người . Ông H. và một người khác đã bị_thương rất nặng .",
+    "pred": "Sáng sớm tập thể_dục, ông H. dậy sớm tập thể_dục. Đi qua khu nhà mình khoảng 400m, ông H. và ông T. bị tạt axit vào người và tử vong sau đó."
+  },
+  {
+    "id": "000028.txt.seg",
+    "abstract": "Sau trong 5 giây , thanh_niên đã dùng búa phá tủ kính tiệm vàng cướp đi 3 sợi dây_chuyền .",
+    "pred": "Camera an ninh ghi lại đối tượng cầm theo 1 cây búa đến tiệm vàng, dùng búa đập tủ kính lấy 3 sợi dây_chuyền. Toàn bộ hành trình dùng búa đập và cướp vàng chỉ diễn ra trong khoảng 5 giây."
+  },
+  {
+    "id": "000029.txt.seg",
+    "abstract": "Sau khi xảy ra vụ tai_nạn khiến Trung_uý quân_đội tử_vong , cơ_quan công_an đã xác_định được tài_xế điều_khiển ô_tô liên_quan đến vụ_việc .",
+    "pred": "Liên quan đến vụ tai_nạn trên đường Hồ Chí Minh, đoạn qua Buôn Ma Thuột ( Đắk Lắk ), sáng 8/10, Công an thị xã Buôn Ma Thuột đã trích xuất dữ liệu từ camera an ninh để truy tìm phương tiện gây tai nạn và làm rõ nguyên nhân."
+  },
+  {
+    "id": "000030.txt.seg",
+    "abstract": "Trong cái nắng oi_ả một ngày cuối tháng 6 , cặp đôi “ song Tú ” bị TAND TP. Hà_Nội đưa ra xét_xử về tội Cướp tài_sản .",
+    "pred": "Để có tiền tiêu xài, Đặng_Tú đã rủ Nguyễn_Tú lên kế hoạch đi cướp taxi của anh Thái. Sau đó, chúng sẽ dùng bình xịt hơi cay xịt vào mặt tài xế xế taxi để cướp xe."
+  },
+  {
+    "id": "000031.txt.seg",
+    "abstract": "Sau khi tẩm xăng vào chiếc xe ô_tô của một Đại_uý CSGT đỗ ngay trước cửa trụ_sở của tổ công_tác CSGT Bến_Bính ( xã Tân_Dương , huyện Thuỷ_Nguyên , TP Hải_Phòng ) vào lúc nửa_đêm , gã đàn_ông đã châm lửa đốt rồi nhanh_chóng tẩu_thoát khỏi hiện_trường .",
+    "pred": "Một người đàn_ ông mang theo dao và khẩu súng dài ( như súng_hơi ) bất ngờ đổ xăng lên chiếc ô-tô cá nhân rồi châm lửa đốt rồi bỏ chạy khỏi hiện trường."
+  },
+  {
+    "id": "000032.txt.seg",
+    "abstract": "Những ngày cuối năm 2018 , gần 300 cán_bộ chiến_sĩ Công_an TP. Thanh_Hoá đã tiến_hành vây_ráp 32 cơ_sở kinh_doanh tín_dụng đen trên địa_bàn tỉnh , bắt tạm giam 5 đối_tượng cầm_đầu để phục_vụ công_tác điều_tra .",
+    "pred": "Công an TP. Thanh_Hoá, tỉnh Thanh_Hoá vừa khởi tố vụ án, khởi tố bị can và ra lệnh bắt tạm giam với 5 nghi phạm liên quan đến hành vi tín dụng đen trên địa bàn."
+  },
+  {
+    "id": "000033.txt.seg",
+    "abstract": "Thấy bạn bị nhóm thanh_niên lạ_mặt đánh , Nguyễn_Văn_Giang trú tại Nghệ_An nỗi máu anh_hùng dùng dao đâm chết người . Vụ án này vừa được đưa ra xét_xử .",
+    "pred": "Tại phiên_toà, mẹ của bị hại đã yêu cầu HĐXX xem lại toàn_bộ hành_vi phạm_tội của mình."
+  },
+  {
+    "id": "000034.txt.seg",
+    "abstract": "Chỉ trong 2 ngày , Vĩnh và Hải đã thực_hiện 2 vụ đột_nhập vào nhà dân ăn_trộm gây hoang_mang dư_luận địa_phương . Đặc_biệt , lợi_dụng sơ_hở của gia_chủ , 2 đối_tượng này gây án “ nhanh như chớp ” .",
+    "pred": "Hai vụ đột_nhập vào nhà trộm tài_sản liên tiếp xảy ra ở Quảng_Bình, tỉnh Quảng Tây, khiến người dân hoang mang, lo lắng."
+  },
+  {
+    "id": "000035.txt.seg",
+    "abstract": "Sau khi đi nhậu về , người chồng ghé tiệm bán hàng ăn để chuẩn_bị buôn_bán thì xảy ra mâu_thuẫn với vợ mình . Trong lúc tức_giận , người vợ đã dùng dao kết_liễu chồng .",
+    "pred": "Sau khi đi nhậu về, vợ Thuỷ xảy ra mâu thuẫn với chồng. Không làm chủ được hành_ vi, Thuỷ đã dùng dao đâm vào người chồng khiến nạn nhân tử vong."
+  },
+  {
+    "id": "000036.txt.seg",
+    "abstract": "Không thừa_nhận được “ trùm ” cờ_bạc tặng đồng_hồ Rolex 7.000 USD , ông Phan_Văn_Vĩnh khai rằng trả tiền mua chiếc đồng_hồ này với giá 1,1 tỷ đồng , nhưng sau đó đã làm mất .",
+    "pred": "Theo cáo trạng truy vấn, ông Phan_Văn_Vĩnh đã khai cho ông Vĩnh 27 tỷ đồng và 1.750.000 USD. Tuy nhiên, do có sự mâu thuẫn về lời khai của ông Vĩnh nên cơ quan An_ninh điều tra đã tách hành vi của ông Phan_Văn_Vĩnh và ông Vĩnh."
+  },
+  {
+    "id": "000037.txt.seg",
+    "abstract": "Trong vai tú_bà chuyên môi_giới bán mại_dâm cho người nước_ngoài , Nghĩa lừa_đảo cả tình lẫn tiền_của nhiều cô_gái trẻ đẹp .",
+    "pred": "Thông qua hình ảnh trên mạng internet, Nghĩa giới thiệu nhiều thiếu nữ đẹp có tuổi từ 17 đến 25 tuổi tìm đến một điểm bán \" tú bà \" thu mua bán \"dâm \" giá cao."
+  },
+  {
+    "id": "000038.txt.seg",
+    "abstract": "Để hợp_thức “ tiền bẩn ” , trong khi “ ông trùm ” Nguyễn_Văn_Dương chọn cách rửa tiền qua BOT Bắc_Giang - Lạng_Sơn thì Phan_Sào_Nam chuyển tiền lòng_vòng qua nhiều nấc trung_gian đến người_thân , bạn_bè để gửi tiết_kiệm , đầu_tư góp vốn vào các dự_án , mua bất_động_sản … Để rửa hàng nghìn tỷ_số tiền thu lời bất_chính , Nam cũng không ngại ngần đưa cả dì ruột của mình vào vòng xoáy lao_lý .",
+    "pred": "Các ông trùm rửa tiền luôn có nhu cầu che giấu nguồn_gốc của khoản tiền thu được từ những hoạt động bất_hợp_pháp mà không gây nghi_ngờ cho các cơ quan thực thi pháp luật."
+  },
+  {
+    "id": "000039.txt.seg",
+    "abstract": "Phiên_toà liên_quan đến vụ ly_hôn của vợ_chồng “ vua cà_phê ” Trung_Nguyên vẫn chưa có hồi kết , bởi những khúc_mắc liên_quan đến số tài_sản trong ngân_hàng trị_giá trên 2.100 tỷ đồng của cặp vợ_chồng này .",
+    "pred": "Ông Đặng_Lê_Nguyên_Vũ cho biết ông không mong muốn mọi chuyện kéo dài như_vậy, chỉ mong sớm kết thúc mọi chuyện, để_dành thời gian phát triển Trung_Nguyên."
+  },
+  {
+    "id": "000040.txt.seg",
+    "abstract": "Tức_giận do chị T. không chịu rút đơn ly_hôn , Hùng đã dùng dao đâm người vợ tử_vong",
+    "pred": "Sau khi đâm chết chị T. do mâu thuẫn tình cảm, Hùng dùng dao thủ sẵn đâm nạn nhân tử vong."
+  },
+  {
+    "id": "000041.txt.seg",
+    "abstract": "Công_an TP. HCM tạm giữ nam thanh_niên 9X do có hành_vi tàng_trữ khẩu súng Rulo , 21 viên đạn và vận_chuyển 1 bịch ma_tuý đá .",
+    "pred": "Cơ quan CSĐT Công_an TP. HCM thông tin, đang tạm giữ Nguyễn_Quốc_Dũng ( SN 1994, ngụ quận 10, TP. HCM ) do có hành vi vận chuyển ma_tuý đá và tàng trữ súng, đạn."
+  },
+  {
+    "id": "000042.txt.seg",
+    "abstract": "Cơ_quan CSĐT CAQ Hoàng_Mai , Hà_Nội vừa bắt_giữ được đối_tượng Bùi_Thị_Ngọc_Anh , 31 tuổi , trú tại phường Hồng_Hà , thành_phố Hạ_Long , tỉnh Quảng_Ninh trốn truy_nã về hành_vi lừa_đảo chiếm_đoạt tài_sản .",
+    "pred": "Theo thông tin mới nhất, ngày 12/6, Công an tỉnh Quảng Ninh và Công an tỉnh Quảng Nam đã bắt được nạn nhân Bùi Thị Ngọc \" tin \". Trước đó, nạn nhân đã bị đối tượng lừa \" chiếm \" 16 tỷ đồng trong tổng số tiền 16 tỷ đồng."
+  },
+  {
+    "id": "000043.txt.seg",
+    "abstract": "Sáng mùng 3 tết ( 7/2 ) người_dân huyện Krông_Nô ( Đắk_Nông ) không khỏi hãi_hùng khi tìm thấy 1 thi_thể nữ_giới trôi_dạt trên sông .",
+    "pred": "Bước_đầu xác_thể nạn nhân là nữ, khoảng 30-35 tuổi, chưa rõ tung_tích, trên người không có giấy tờ tuỳ thân."
+  },
+  {
+    "id": "000044.txt.seg",
+    "abstract": "Mới bước sang tuổi 20 nhưng Việt_Anh đang phải thụ_án 20 năm tù vì tội Giết người . Phải trả_giá cho tội_ác bằng nhiều năm tù khi còn quá trẻ , nam phạm_nhân luôn cắn_rứt lương_tâm với nỗi hối_hận chất chồng .",
+    "pred": "Trong số các phạm nhân bị kết án tù tại trại_giam Đắk_Plao ( tỉnh Đắk Nông ), có một phạm nhân khá đặc biệt : Việt Anh. Bởi, nhìn thấy vết sẹo trên đầu, Việt Anh buồn_đớn và luôn tìm cách xin mẹ tha thứ."
+  },
+  {
+    "id": "000045.txt.seg",
+    "abstract": "Liên_quan vụ nữ_sinh giao gà bị giết , đối_tượng Vì Văn_Toán - kẻ được cho là cầm_đầu vụ án đã khai rằng , sau khi bắt_giữ nữ_sinh Cao_Mỹ_D. , nhóm đối_tượng này có liên_lạc với mẹ nạn_nhân .",
+    "pred": "Sau khi cơ quan tố tụng tỉnh Điện Biên và bộ Công an có quyết định khởi tố vụ án nữ sinh giao gà bị giết, sáng nay ( 7/11 ), các tình_tiết của vụ án đã dần sáng rõ."
+  },
+  {
+    "id": "000046.txt.seg",
+    "abstract": "Vì hám_lợi , Lang_Thị_Liên nhẫn_tâm bán cả M. , em_gái họ 14 tuổi sang Trung_Quốc để lấy chồng .",
+    "pred": "Tại phiên_toà, bị_cáo Lang_Thị_Liên đã cúi đầu thừa nhận tội, đồng thời khai nhận toàn bộ hành vi của mình với người buôn bán trẻ_em"
+  },
+  {
+    "id": "000047.txt.seg",
+    "abstract": "Nghi_ngờ người vợ có người đàn_ông khác , V. đã dùng dao hành_hung khiến vợ bị trọng_thương , phải đi cấp_cứu , điều_trị nhiều ngày trong bệnh_viện .",
+    "pred": "Công an huyện Yên_Thế, tỉnh Bắc 'Giang, tỉnh Yên_Thế đang điều tra vụ một người phụ_nữ bị chồng hành_hung, gây thương tích."
+  },
+  {
+    "id": "000048.txt.seg",
+    "abstract": "Qua quá_trình điều_tra , cơ_quan điều_tra xác_định chị H. giết Trung là do phòng_vệ chính_đáng .",
+    "pred": "Cơ quan chức năng xác định, Trung đôt nhâp vào nhà chị H. đêm ngày 11/3 không có mục đích trôm tài sản mà chỉ có ý định duy nhât là giêt ngươi."
+  },
+  {
+    "id": "000049.txt.seg",
+    "abstract": "Phát_hiện một đối_tượng mang hàng xâm_nhập biên_giới trái_phép , tổ công_tác đồn Biên_phòng Bát_Mọt ( Thanh_Hoá ) tổ_chức kiểm_tra , bắt_giữ . Bất_ngờ , đồng_bọn của kẻ này đã bắn nhiều phát đạn về phía đội_hình khiến 3 sỹ quan trúng đạn , 1 thiếu_tá đã hi_sinh .",
+    "pred": "Trong khi tuần tra kiểm soát vùng biên giới, một thiếu niên thuộc bộ 'Chỉ 'huy bộ_đội Biên_phòng tỉnh Thanh, Mỹ và 2 chiến_sĩ bị trúng đạn."
+  },
+  {
+    "id": "000050.txt.seg",
+    "abstract": "4 đối_tượng không nghề_nghiệp ổn_định , rủ nhau xuống TP. Huế thuê nhà_nghỉ rồi cắt trộm cáp viễn_thông bán lấy tiền tiêu_xài .",
+    "pred": "Lợi dụng đêm tối, các đối_tượng đã thực hiện hàng loạt vụ trộm, gây thiệt hại hàng trăm triệu đồng."
+  },
+  {
+    "id": "000051.txt.seg",
+    "abstract": "Công_an quận Tân_Phú , TP. HCM đang phối_hợp các đơn_vị nghiệp_vụ Công_an điều_tra làm rõ nghi_án đặt thuốc_nổ trong micro hát karaoke khiến hai mẹ_con bị_thương .",
+    "pred": "Một chiếc micro hát karaoke được gửi đến cho vợ chồng anh N., sau đó chị cắm vào ổ điện để sạc pin thì bất ngờ phát nổ. Vụ nổ khiến chị T. bị cháy quần áo, bỏng hai bên đùi, hai tay và con gái 3 tuổi."
+  },
+  {
+    "id": "000052.txt.seg",
+    "abstract": "Cô_gái 16 tuổi được cho là bạn gái của hung_thủ đâm chết anh Mai_Xuân_Lan hôm 4/4 bất_ngờ xuất_hiện tại đám_tang , đưa có gia_đình 10 triệu đồng và đòi ghi_âm việc vợ anh L. có nhận của thiếu_nữ số tiền này",
+    "pred": "Liên quan đến vụ thiếu nữ đâm chết người vì nhắc_niên vượt đèn đỏ, sáng 7/4, nguồn tin mới nhất cho hay, thiếu nữ này đã lên gặp vợ nạn nhân và có hành vi đáng ngờ."
+  },
+  {
+    "id": "000053.txt.seg",
+    "abstract": "Sau khi tiến_hành đấu_tranh , Đinh_Thị V.A . thừa_nhận sinh con trong nhà_vệ_sinh xong nhưng bé đã chết nên đã vứt qua khe cửa_sổ xuống đất .",
+    "pred": "Liên quan đến vụ bé sơ_sinh rơi từ tầng 31 chung cư HH2A, khu vực đô thị Linh_Đàm, quận Hoàng_Mai, Hà 'Nội. được xác định là Đinh_Thị V.A. ( 21 tuổi, quê tại Quảng Bình ). khai nhận sau khi sinh con, nhận_nhận bé trai đã tử_vong nên đã ném con xuống đất qua cửa sổ nhà vệ sinh."
+  },
+  {
+    "id": "000054.txt.seg",
+    "abstract": "Liên_quan vụ nguyên Phó viện trưởng VKSND TP. Đà_Nẵng sàm_sỡ bé gái trong thang_máy , theo Thượng_tá Nguyễn_Xuân_Hùng , hành_vi của ông Linh có dấu_hiệu phạm_tội Dâm_ô với người dưới 16 tuổi .",
+    "pred": "Thượng_tá Nguyễn_Xuân_Hùng cho rằng, hành vi của người đàn ông ôm hôn bé gái 7 tuổi trong thang_máy của một chung_cư ở quận 4, TP. HCM có dấu hiệu của hành vi Dâm ô với người dưới 16 tuổi."
+  },
+  {
+    "id": "000055.txt.seg",
+    "abstract": "Đôi nam_nữ cầm_đầu tổ_chức tín_dụng đen hơn 50 chi_nhánh trong cả nước đang bị Công_an TP. Thanh_Hoá ra quyết_định truy_nã .",
+    "pred": "Phùng_Ngọc_Huy và Trần_Thị_Diệp là 2 đối tượng nằm trong nhóm tội_phạm chuyên cho vay nặng_lãi núp dưới bóng Công ty tài chính Tín_Nghĩa."
+  },
+  {
+    "id": "000056.txt.seg",
+    "abstract": "Ông Phan Ngọc Khuê , nguyên Giám đốc khách sạn Công đoàn Hà Tĩnh đã ra cơ_quan công_an đầu thú , sau một thời gian bỏ trốn , bị phát lệnh truy nã .",
+    "pred": "Trong quá trình giư chưc vụ giám đôc khách sạn Công đoàn Hà Tĩnh, Phan Ngọc Khuê đã có nhưng hành vi lạm_dụng chức_vụ, quyền_hạn chiếm_đoạt tài_sản."
+  },
+  {
+    "id": "000057.txt.seg",
+    "abstract": "Ông Nguyễn_Chấn , 96 tuổi , chồng cố doanh_nhân Tư_Hường từng tổ_chức họp_báo tố_cáo chính con_trai là ông Nguyễn_Quốc_Toàn - Chủ_tịch HĐQT ngân_hàng Nam_Á và một_số cá_nhân khác tìm cách chiếm_đoạt gia_sản có giá_trị khoảng 30.000 tỷ .",
+    "pred": "Theo lời ông Nguyễn_Chấn, với sự cấu_kết, tiếp tay của một_số cá nhân, người con_trai thứ của ông đã chiếm_giữ hết tài_sản của vợ_chồng ông Chấn  bà Tư_Hường."
+  },
+  {
+    "id": "000058.txt.seg",
+    "abstract": "2 đối_tượng tên Hiếu cùng rủ nhau hỏ học rồi từ tỉnh Quảng_Nam ra TP. Đà_Nẵng cướp_giật tài_sản và bị bắt_giữ .",
+    "pred": "Hai đối tượng này khai nhận đã bỏ học từ khi bắt đầu đến TP. Đà_Nẵng kiếm việc làm. Việc chưa tìm được thì họ đã cùng nhau cướp tài_sản và bị sa lưới."
+  },
+  {
+    "id": "000059.txt.seg",
+    "abstract": "Sau khi sinh mổ tại Trung_tâm y_tế huyện Tây_Sơn ( Bình_Định ) , sản_phụ Võ_Thị_Bích_L. được đưa ra phòng hậu_phẫu . Tuy_nhiên , chị lên_cơn co_giật , tím_tái toàn_thân và tử_vong sau đó .",
+    "pred": "Sản phụ Võ_Thị_L. được đưa vào Trung tâm Y tế huyện Tây_Sơn ( Bình_Định ) để mổ. Sau khi sinh, chị L. được các bác sĩ đưa ra phòng hậu phẫu nhưng sau đó lên cơn co_giật."
+  },
+  {
+    "id": "000060.txt.seg",
+    "abstract": "Nghi phạm sát_hại mẹ đẻ bằng kéo ở Bình_Phước đã bị Công_an TP. Đồng_Xoài phối_hợp cùng các đơn_vị nghiệp_vụ Công_an tỉnh Bình_Phước bắt_giữ vào tối 30/6 .",
+    "pred": "Chiều 30/6, Công an TP. Đồng 'Xoài ( Bình_Phước ) cho biết đã bắt được nghi phạm dùng kéo đâm chết mẹ và người tình khiến nạn nhân bị thương."
+  },
+  {
+    "id": "000061.txt.seg",
+    "abstract": "Hoàng_Công_Lương không nhận bản_thân là nguyên_nhân gây ra cái chết của bệnh_nhân chạy thận mà cho_rằng nguyên_nhân là do tồn_dư hoá_chất trong quá_trình bảo_dưỡng , sửa_chữa hệ_thống RO .",
+    "pred": "Bị_cáo Lương phủ nhận trách nhiệm trong vụ án chạy thận làm chết người và khẳng định : Tại BVĐK tỉnh Hoà_Bình, Trưởng khoa không phải chịu trách nhiệm về nguồn nước..."
+  },
+  {
+    "id": "000062.txt.seg",
+    "abstract": "Ông Phan_Văn_Vĩnh đã tự_nguyện viết đơn xin về trại để tham_dự phiên_toà xét_xử diễn ra vào ngày 12/11 của TAND tỉnh Phú_Thọ .",
+    "pred": "Phiên xét xử ông Phan_Văn_Vĩnh sẽ diễn ra vào ngày 12/11 tới đây. Tuy 'lại'hơn 2 tháng qua nhưng các phiên xử đã được diễn ra."
+  },
+  {
+    "id": "000063.txt.seg",
+    "abstract": "Sau khi phát_hiện xe_máy bị mất_trộm , anh Sơn đã trình_báo cơ_quan công_an . Nhờ thiết_bị định_vị lắp trên xe , anh Sơn đã tìm lại được chiếc xe cách nhà_hàng chục km .",
+    "pred": "Sau khi bị kẻ trộm \" ghé \" nhà, ông Nguyễn_Văn_Sơn, trú tại TP. Hải_Phòng đã trình báo cơ quan công an và tìm ra chiếc xe bị mất trộm."
+  },
+  {
+    "id": "000064.txt.seg",
+    "abstract": "Ngày 5/4 , Công_an thị_xã Lagi , tỉnh Bình_Thuận cho biết , đang lấy lời khai , điều_tra vụ một thanh_niên dùng dao và xăng doạ đốt người_yêu .",
+    "pred": "Sau khi bị nhóm đối tượng bắt giữ, lực lượng chức năng đã truy tìm ra đối tượng còn lại, đang thủ sẵn 4 con dao và một chai xăng để tự vệ."
+  },
+  {
+    "id": "000065.txt.seg",
+    "abstract": "Có người đặt mua ma_tuý , Sơn đã liên_hệ với người đàn_ông Lào để lấy \" hàng \" . Khi đang giao_dịch cho khách hắn bị lực_lượng chức_năng bắt_giữ .",
+    "pred": "Khi đang ở nhà thì một người đàn_ \" cao thủ \" đã liều mình đi lấy ma_tuý về bán kiếm lời bất chính. Khi đang giao dịch hàng, đối tượng này bị lực lượng chức năng bắt giữ cùng 2 gói ma_tuý hồng phiến."
+  },
+  {
+    "id": "000066.txt.seg",
+    "abstract": "Tin an_ninh hình_sự 24h qua : Bắt 9X mở két , trộm 10.000 USD của nữ doanh_nhân Việt_kiều ; Đề_nghị truy_tố 6 người trong vụ bác_sĩ Chiêm_Quốc_Thái bị truy_sát ; ' Yêu râu xanh ' dụ bé gái vào nhà xoa_bóp rồi xâm_hại ; Bắt_giữ “ đôi bạn ” nghiện trộm ... cả thóc để mua ma_tuý ...",
+    "pred": "Tin an ninh hình sự 24h qua : Bắt 9X mở két, trộm 10.000 USD của nữ doanh nhân Việt_kiều ; Đề_nghị truy_tố 6 người trong vụ bác'sĩ Chiêm_Quốc_Thái bị truy_sát ; Bắt_giữ  đôi bạn  nghiện trộm cả thóc để mua ma_tuý ; Bắt_giữ  đôi bạn  nghiện trộm... cả thóc để mua ma_tuý..."
+  },
+  {
+    "id": "000067.txt.seg",
+    "abstract": "VKSND Tối_cao vừa có quyết_định truy_tố 7 bị_can về hành_vi lừa_đảo hơn 68.000 bị hại để chiếm_đoạt trên 1.121 tỷ đồng . Trong đó có đối_tượng Lê_Xuân_Giang , \" trùm đa_cấp \" của công_ty lừa_đảo Liên_Kết_Việt .",
+    "pred": "VKSTC - V 3 vừa kết thúc điều tra vụ án \" Lừa_đảo chiếm_đoạt tài_sản \" xảy ra tại Công_ty Liên_Kết_Việt. Trong đó, VKSND Tối_cao đã truy_tố 7 bị_can về hành vi lừa_đảo hơn 68.000 bị hại để chiếm_đoạt trên 1.121 tỷ đồng."
+  },
+  {
+    "id": "000068.txt.seg",
+    "abstract": "Để có tiền tiêu_xài , hai đối_tượng lên kế_hoạch đi cướp tài_sản của người_dân . Cả hai chuyên điều_khiển xe_máy với tốc_độ cao , áp sát người đi đường rồi cướp tài_sản của các nạn_nhân .",
+    "pred": "Sau nhiều ngày gây ra 8 vụ trộm_cắp tài_sản trên địa bàn các quận Gò_Vấp và quận Gò_Vấp, TP. HCM, hai đối tượng khai nhận tổng cộng 8 vụ trộm_cắp tài_sản, cướp_giật tài_sản, trong đó chỉ có 1 vụ bị hại đến công an trình báo."
+  },
+  {
+    "id": "000069.txt.seg",
+    "abstract": "Sau khi đột_nhập vào căn biệt_thự của gia_đình ông Đinh_Quang_Minh ở khu_phố Kim_Đa , phường Ninh_Khánh ( TP. Ninh_Bình ) , Cửu châm lửa hút xì_gà . Đối_tượng tiếp_tục lẻn lên tầng 2 , dùng xà_cầy phá két sắt , lấy trộm 200 cây vàng rồi bỏ trốn .",
+    "pred": "Trong phiên xử vụ trộm 200 cây vàng, TAND tỉnh Ninh_Bình đã tuyên phạt 2 bị cáo Nguyễn \"Công \" và Nguyễn \"Công \"Hoan 14 năm tù."
+  },
+  {
+    "id": "000070.txt.seg",
+    "abstract": "Dù đối_tượng thường_xuyên qua_lại theo các đường tiểu_ngạch và sử_dụng vũ_khí nóng nhưng khi bước chân vào biên_giới Việt_Nam thì lập_tức bị cơ_quan_chức_năng bắt_giữ .",
+    "pred": "Dềnh_Song_Chò là người am hiểu về các đường tiểu_ngạch, thường xuyên vận chuyển ma_tuý từ Lào về Việt Nam tiêu thụ, với số lượng lớn. Khi Chò đi tại tại khu_vực xã Thanh \"Thuỷ, huyện Thanh \"Chương, cán bộ chiến sĩ phòng Cảnh'sát điều tra về ma_tuý vẫn hàng ngày bám sát địa bàn, theo dõi tường di biến_động của đối tượng."
+  },
+  {
+    "id": "000071.txt.seg",
+    "abstract": "Do mâu_thuẫn trong quán karaoke , cán_bộ phòng Kinh_tế hạ_tầng huyện đã đâm tử_vong cán_bộ trung_tâm Phát_triển quỹ đất của huyện .",
+    "pred": "Đối tượng gây ra cái chết cho một cán bộ phòng Kinh tế hạ tâng thuộc UBND huyện Krông_Ana, tỉnh Đắk_Lắk đã bị tạm giữ để điều tra về hành vi Giết người."
+  },
+  {
+    "id": "000072.txt.seg",
+    "abstract": "Người_ta thường nói “ Hổ dữ không ăn thịt con ” , thế_nhưng Nguyễn_Thị_Huế ( SN 1963 , ở thị_trấn Quang_Minh , huyện Mê_Linh , Hà_Nội ) lại đang tâm đoạt mạng chính con_đẻ của mình .",
+    "pred": "Trong quá trình truy vấn, toà án tại Hà Nội đã mở phiên_toà sơ_thẩm xét_xử Nguyễn Thị_Thị_Huế về tội Giết người."
+  },
+  {
+    "id": "000073.txt.seg",
+    "abstract": "Thi_thể người đàn_ông chạy xe_ôm lâu năm được người_dân phát_hiện tử_vong tại mương nước bên đường . Chiếc xe_máy của nạn_nhân không thấy tại hiện_trường .",
+    "pred": "Một người đàn_ông chạy xe ôm nhiều năm bị tử vong khi đang chạy xe ôm tại mương nước cạnh đường. Bước_đầu danh tính_tính nạn nhân được xác 'định'là tài xế xe tải có nhiều năm chạy xe ôm."
+  },
+  {
+    "id": "000074.txt.seg",
+    "abstract": "Sau khi dùng dao đâm gục người_tình , Tín tiếp_tục dùng dao tự đâm vào bụng mình tự_sát . Cả hai được đưa đến bệnh_viện cấp_cứu nhưng người_tình của Tín đã tử_vong .",
+    "pred": "Bị chị H. tắt máy, Tín lấy xe mô tô đến nhà chị H. để nói chuyện. Gặp mẹ và con gái, Tín dùng dao đâm chết nạn nhân."
+  },
+  {
+    "id": "000075.txt.seg",
+    "abstract": "Ngày 14/5/2019 , TAND Tỉnh_Bắc_Ninh xét_xử vụ án trộm_cắp tài_sản “ khủng ” tại công_ty TNHH Samsung_Display Việt_Nam .",
+    "pred": "Ngày 2/10, TAND tỉnh Bắc Ninh mở phiên xét xử sơ thẩm vụ án trộm_cắp tài sản xảy ra tại làng quê Việt Nam. Đến nay, vụ việc vẫn chưa được làm rõ."
+  },
+  {
+    "id": "000076.txt.seg",
+    "abstract": "Rất nhiều vụ mua_bán ma_tuý khủng trên cả nước đã bị triệt_phá , đặc_biệt là trong năm Mậu_Tuất . Trong đó phải kể đến các chuyên_án lớn ở Lào_Cai , Hà_Tĩnh , Bắc_Kạn , TP. HCM …",
+    "pred": "Vụ án ma ma tuý nghi do người Việt cầm đầu thu giữ được công khai, cảnh sát bắt giữ được các đối tượng và đang tiến hành điều tra."
+  },
+  {
+    "id": "000077.txt.seg",
+    "abstract": "Rạng sáng , trên đường đi chợ bán hàng , chị Thuỷ bị một đối_tượng chèn_ép xe , dùng dao kề cổ_doạ giết để cướp tiền và điện_thoại_di_động . Thủ_phạm nhanh_chóng bị lực_lượng công_an bắt_giữ vào chiều cùng ngày khi đang lẩn_trốn trên đồi .",
+    "pred": "Liên quan đến vụ cướp táo tợn trên đường Hồ Chí Minh, đoạn qua địa bàn huyện YênThuỷ, tỉnh Hoà Bình, đã có thông tin chính thức về thủ phạm gây án."
+  },
+  {
+    "id": "000078.txt.seg",
+    "abstract": "Phiên_toà dự_kiến vào đầu tháng 5 để xét_xử kỹ_sư David_Xu vì đã âm_thầm đầu_độc nữ đồng_nghiệp trong suốt 18 tháng qua nguồn nước .",
+    "pred": "Cô Rong_Yuan đã phát hiện nhiều dấu hiệu bị nhiễm độc cadimi, gây ảnh hưởng đến sức khoẻ khiến cả ba người đều gặp vấn đề sức khoẻ nghiêm trọng."
+  },
+  {
+    "id": "000079.txt.seg",
+    "abstract": "Mâu_thuẫn nhau trong quán bar , nhóm thanh_niên đa_phần là sinh_viên bị đánh thương_tích nên lên kế_hoạch trả_thù . Chúng vờ đặt mua hàng của một thanh_niên trong nhóm “ đối_thủ ” , khi thanh_niên này giao hàng đến thì chúng bao_vây , đánh hội_đồng rồi “ lột sạch ” tài_sản .",
+    "pred": "Nhóm nghi - can cầm đầu vụ dàn cảnh cướp tài_sản trước siêu thị Lotte ở TP. HCM đang bị công an tạm giữ. Đáng chú ý, nghi phạm \" cầm đầu \" nhóm này còn rất trẻ, độ tuổi chưa đến 18..."
+  },
+  {
+    "id": "000080.txt.seg",
+    "abstract": "Cơ_quan CSĐT Công_an tỉnh Thanh_Hoá vừa khởi_tố bị_can , bắt tạm giam nghi_phạm đâm_chém 6 cô trò , khiến 1 người chết ở Thanh_Hoá về tội Giết người .",
+    "pred": "Cơ quan công_an tỉnh Thanh Hoá vừa khởi tố vụ án, khởi tố bị can, ra lệnh bắt tạm giam 4 tháng với Đỗ_Mãnh_Chiểu_Minh, kẻ đã đâm, chém loạn xạ học sinh các lớp 3,4,5."
+  },
+  {
+    "id": "000081.txt.seg",
+    "abstract": "Chiều_tối 5/4 , nguồn_tin của PV cho biết , Công_an tỉnh Cà_Mau đang điều_tra vụ cướp tài_sản xảy ra tại huyện U_Minh vào cuối tháng 3/2019.",
+    "pred": "Sáng 28/3, nguồn tin của Tuổi Trẻ cho biết cơ quan công an đang điều tra vụ người phụ nữ bị lừa vào nhà lấy hơn 1 lượng vàng."
+  },
+  {
+    "id": "000082.txt.seg",
+    "abstract": "Căn nhà 2 tầng nằm trên đường Duy_Tân , phường Hoà_Thuận_Tây , quận Hải_Châu ( Đà_Nẵng ) bỗng bốc cháy ngùn_ngụt sau tiếng nổ lớn .",
+    "pred": "Vụ hoả_hoạn tại căn nhà 3 tầng rộng hơn 1.500 m2 ở phường Hoà Xuân, quận Liên Chiểu, TP. Đà Nẵng đã thiêu rụi nhiều đồ đạc, tài sản."
+  },
+  {
+    "id": "000083.txt.seg",
+    "abstract": "Viện_kiểm_sát nhân_dân quận Cầu_Giấy vừa phê_chuẩn quyết_định khởi_tố bị_can đối_với tài_xế Doãn_Quý_Phiến để điều_tra , làm rõ về tội \" Vô_ý làm chết người \" .",
+    "pred": "Ông Doãn_Quý_Phiến  người đưa đón học sinh lớp 1, trường Gateway bị khởi 'tố'hành vi'vô luật vô vô vô vô vô vô vô vô vô vô vô vô vô vô vô vô_ý làm chết người"
+  },
+  {
+    "id": "000084.txt.seg",
+    "abstract": "Sau khi thực_hiện hành_vi lừa_đảo chiếm_đoạt xe_máy của chị D. , đối_tượng Tuấn đã bị cơ_quan_chức_năng tỉnh Thừa_Thiên - Huế khởi_tố .",
+    "pred": "Một đối tượng lừa đảo có hành vi đặc biệt nguy hiểm vừa bị Công_an TP. Huế bắt giữ."
+  },
+  {
+    "id": "000085.txt.seg",
+    "abstract": "TAND TP. Hà_Nội đang xét_xử 4 sếp Lọc hoá_dầu Bình_Sơn do liên_quan đến việc gửi tiền , nhận lãi ngoài từ ngân_hàng Oceanbank .",
+    "pred": "Trong phiên xét xử sáng nay, TAND TP. Hà_Nội triệu tập 4 lãnh đạo công ty Lọc hoá_dầu Bình_Sơn ( BSR ) hầu toà trong vai trò là người có quyền ( quyền_hạn chiếm_đoạt tài sản."
+  },
+  {
+    "id": "000086.txt.seg",
+    "abstract": "Sau cướp 250 triệu đồng của nạn_nhân , Tư và Thức chia nhau tiêu_xài , sắm xe mới rồi bỏ trốn . Qua truy_xét , hai kẻ_cướp đã phải tra tay vào còng .",
+    "pred": "Thực hiện hành vi cướp tài sản của vợ, hai đối tượng đang bị ngành chức năng điều tra, làm rõ."
+  },
+  {
+    "id": "000087.txt.seg",
+    "abstract": "Ập vào căn nhà tại địa_chỉ số 1 đường Quân_Sự , quận 11 ( TP. HCM ) , cơ_quan_chức_năng phát_hiện lô thuốc trị bệnh tim , xương khớp nhập lậu hơn 2 tỷ đồng .",
+    "pred": "Hàng nghìn sản phẩm tân_dược nhập lậu từ Trung Quốc vừa bị lực lượng quản lý thị trường ập vào triệt phá."
+  },
+  {
+    "id": "000088.txt.seg",
+    "abstract": "Trong lúc đi thăm lúa , người_dân phát_hiện vật lạ dưới suối . Lại gần kiểm_tra thì tá_hoả thấy thi_thể 1 người phụ_nữ không mặc quần_áo , nên vội_vàng tri hô những người xung_quanh .",
+    "pred": "Đi thăm ruộng lúa và hái măng, người đàn_ông phát hiện thi thể người phụ nữ đang trong quá trình phân huỷ mạnh. Hoảng_sợ, người đàn_ông liền vứt đồ_nghề lấy măng tại hiện trường."
+  },
+  {
+    "id": "000089.txt.seg",
+    "abstract": "Trong lúc hái măng trong rừng ở xã Ea_Ral , huyện Ea_Hleo ( Đắk_Lắk ) , người_dân phát_hiện thi_thể người đàn_ông không mặc áo đang trong giai_đoạn phân_huỷ .",
+    "pred": "Một nhóm người vào khu_vực rừng muồng lấy măng, tá hoả phát hiện thi thể một người đàn_ông trong tư thế treo cổ tại đây."
+  },
+  {
+    "id": "000090.txt.seg",
+    "abstract": "Trong lúc xô_xát , Th . đã bị Đạt dùng vật nhọn đâm gục tại_chỗ và tử_vong ngay sau đó .",
+    "pred": "Nạn nhân bị đâm tử_vong đang được công an tạm giữ để phục vụ công tác điều tra."
+  },
+  {
+    "id": "000091.txt.seg",
+    "abstract": "Sau khi ra_tay sát_hại anh Nguyễn_Văn_H. , đối_tượng Lương_Văn_Dư đã liên_lạc với mẹ nạn_nhân nói_dối anh H. sang Trung_Quốc làm_việc . Chưa dừng lại , Dư còn liên_tục gọi điện cho mẹ nạn_nhân để vay tiền .",
+    "pred": "Một người mẹ ở Vũng_Tàu, tỉnh Vĩnh_Phúc, tỉnh Vĩnh Phúc vừa bị sét đánh mất người con gái duy nhất của mình. Sau một thời gian dài không có tin tức gì của con_trai khiến bà Thành lo_sợ có chuyện chẳng lành xảy ra đối_với con_trai mình."
+  },
+  {
+    "id": "000092.txt.seg",
+    "abstract": "Anh T. và chị M. mới ở trong giai_đoạn tìm_hiểu , yêu_đương . Việc cả 2 tử_vong trong căn nhà khiến gia_đình và chính_quyền hết_sức ngỡ_ngàng .",
+    "pred": "Trước khi vụ việc đau lòng xảy ra, người nhà nạn nhân bàng hoàng phát hiện chị M. và anh T. chết trong tình trạng khoả thân."
+  },
+  {
+    "id": "000093.txt.seg",
+    "abstract": "Tin an_ninh hình_sự 24h qua : Mang vật nghi là súng cướp chi_nhánh ngân_hàng Vietinbank ở Long_Biên ; Bắt 4 yêu râu xanh thay nhau hãm_hiếp bé gái 14 tuổi tại nhà_nghỉ ở Lào_Cai ; Khởi_tố nguyên Thượng_uý công_an vụ cài ma_tuý đẩy người vô_tội vào tù ...",
+    "pred": "Tin an ninh hình sự 24h qua : Mang vật nghi là súng cướp chi_nhánh ngân_hàng Vietinbank ở Long_Biên ; Bắt 4 yêu râu xanh thay nhau hãm_hiếp bé gái 14 tuổi tại nhà_nghỉ ở Lào_Cai ; Khởi_tố nguyên Thượng_uý công_an vụ cài ma_tuý đẩy người vô tội vào tù..."
+  },
+  {
+    "id": "000094.txt.seg",
+    "abstract": "Liên_quan đến nghi_vấn lộ clip \" nóng \" với gái lạ , Trưởng_phòng Tài_chính - Kế_hoạch UBND huyện Phú_Xuyên bị đình_chỉ công_tác 15 ngày để xác_minh , làm rõ .",
+    "pred": "UBND huyện Phú_Xuyên ( Hà Nội ) đang tạm đình chỉ công tác 15 ngày đối với Trưởng_phòng nghi bị lộ clip nóng."
+  },
+  {
+    "id": "000095.txt.seg",
+    "abstract": "Khi các đối_tượng đang vận_chuyển ma_tuý trên đường thì bị tổ tuần_tra của CLB Phòng_chống tội_phạm phát_hiện . Ngay sau đó , các đối_tượng đã tìm cách phi_tang vật_chứng , tuy_nhiên hành_vi này đã không qua mắt được tổ tuần_tra .",
+    "pred": "2 đối_tượng có hành vi Tàng_trữ trái phép chất ma_tuý. Sau khi bị phát hiện và bắt giữ, các đối_tượng đã bị lực lượng công an bắt giữ."
+  },
+  {
+    "id": "000096.txt.seg",
+    "abstract": "Khi các “ dân_chơi ” đang bay , lắc trong tiếng nhạc chát_chúa , lực_lượng Cảnh_sát Hình_sự Công_an TP. Hải_Phòng đã tiến_hành đột_kích , bắt_giữ hàng chục đối_tượng .",
+    "pred": "Cơ quan công an vừa phối hợp với Công an TP. Hải Phòng triệt phá một \" động lắc \" khủng ở Hải Phòng. Qua xét nghiệm, phát hiện 50 đối tượng dương tính với các chất ma tuý."
+  },
+  {
+    "id": "000097.txt.seg",
+    "abstract": "Sáng 12/2 , trả_lời PV Người Đưa_Tin , Thiếu_tướng Sùng_A_Hồng , Giám_đốc Công_an tỉnh Điện_Biên cho biết , nghi_phạm Vương_Văn_Hùng đã khai nhận hành_vi phạm_tội hiếp_dâm và sát_hại nữ_sinh bán gà tại Điện_Biên .",
+    "pred": "Sáng ngày 12/2, Thiếu tướng Sùng_A_Hồng, Giám đốc Công an tỉnh Điện Biên đã trao đổi với báo chí về vụ án giết người, hiếp dâm, giết người xảy ra tại ấp Phú Hiệp, xã Điện Nam Trung, huyện Điện_Biên."
+  },
+  {
+    "id": "000098.txt.seg",
+    "abstract": "Nữ nhân_viên tên M. đã có đơn gửi đến Công_an quận Hoàn_Kiếm , đề_nghị không xem_xét xử_lý hình_sự vụ_việc đối_với nam đồng_nghiệp 25 tuổi bị tố có hành_vi sờ ngực , bóp_cổ và đánh mình .",
+    "pred": "Liên quan đến nghi vấn sàm sỡ cô gái trong nhà_hàng ở phố Ngô_Thì_Nhậm, quận Hoàn_Kiếm, TP. Hà 'Nội ), sáng ngày 1/4, lãnh đạo Công... phường Hàng_Bài cho biết đang làm việc với nam nhân_viên sinh năm 1994."
+  },
+  {
+    "id": "000099.txt.seg",
+    "abstract": "Các đối_tượng dùng tài_khoản đã có trên trang đánh_bạc nước_ngoài , truy_cập trực_tuyến các trận đá gà và tổ_chức cho nhóm con_bạc cá_cược ăn_thua bằng tiền quy_mô lớn , thu_giữ hơn 200 triệu đồng .",
+    "pred": "Nhóm đối_tượng đánh_cược bằng tiền quy_mô lớn qua mạng vừa bị ngành chức năng bắt giữ."
+  },
+  {
+    "id": "000100.txt.seg",
+    "abstract": "Chiều_tối ngày 17/4 , PV báo Người Đưa_Tin có_mặt tại ngôi nhà nơi giam_giữ , hành_hung cô_gái 18 tuổi đến sảy thai . Ngôi nhà đóng kín cửa . Người_dân đều ngao_ngán khi nhắc đến người thuê trọ tại đây .",
+    "pred": "Những ngày gần đây, người dân ở tổ 29, ấp 1B, xã Vĩnh_Lộc B, huyện Bình_Chính, TP. HCM rất bức xúc về vụ cô gái bị hành_hung đến sảy thai."
+  }
+]
