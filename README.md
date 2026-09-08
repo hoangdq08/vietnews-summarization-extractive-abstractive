@@ -31,6 +31,22 @@ python src/run_extractive.py --limit 100
 
 Kết quả: `results/extractive_preview.json`, `results/extractive_scores.csv`
 
+## Ghép ROUGE 3 hệ
+
+Cần `results/preds.json` (output Kaggle).
+
+```bash
+python src/merge_scores.py
+```
+
+Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
+
+| Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
+|---|---|---|---|
+| Lead-3 | 0.2507 | 0.1296 | 0.1841 |
+| TextRank | 0.2428 | 0.1100 | 0.1730 |
+| ViT5 | 0.2664 | 0.1341 | 0.2084 |
+
 ## Abstractive (Kaggle)
 
 1. Tạo notebook Kaggle, bật **GPU T4 x2**, **Internet On**, notebook Private.
