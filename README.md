@@ -2,7 +2,9 @@
 
 *A Comparative Study of Extractive and Abstractive Summarization for Vietnamese News*
 
-Đồ án CS221. So sánh **Lead-3**, **TextRank** (rút trích) và **ViT5** (tóm lược) trên Vietnews.
+Đồ án CS221 — **Nhóm 14:** Nguyễn Trí Toàn (26410135), Nguyễn Văn Thái (26410108), Đỗ Quốc Hoàng (26410043).
+
+So sánh **Lead-3**, **TextRank** (rút trích) và **ViT5** (tóm lược) trên Vietnews.
 
 Câu hỏi: trên cùng tập test, ba hệ khác nhau thế nào về ROUGE, và khi đọc tay thì mỗi hệ sai kiểu gì?
 
