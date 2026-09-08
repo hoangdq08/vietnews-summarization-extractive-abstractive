@@ -3,11 +3,7 @@
 from itertools import combinations
 from math import comb
 
-from evaluate import rouge_one
-
-
-def _norm(text):
-    return (text or "").replace("_", " ")
+from evaluate import normalize, rouge_one
 
 
 def oracle_n(sentences, gold, n=3, max_comb=30000):
@@ -15,14 +11,14 @@ def oracle_n(sentences, gold, n=3, max_comb=30000):
         return ""
     if len(sentences) <= n:
         return " ".join(sentences)
-    gold_n = _norm(gold)
+    gold_n = normalize(gold)
     n_s = len(sentences)
     if comb(n_s, n) > max_comb:
         return _greedy(sentences, gold_n, n)
     best_score = -1.0
     best_idx = None
     for idx in combinations(range(n_s), n):
-        pred = _norm(" ".join(sentences[i] for i in idx))
+        pred = normalize(" ".join(sentences[i] for i in idx))
         score = rouge_one(pred, gold_n)["rouge1"]
         if score > best_score:
             best_score = score
@@ -37,7 +33,7 @@ def _greedy(sentences, gold_n, n):
         best_score = -1.0
         best_i = remain[0]
         for i in remain:
-            pred = _norm(" ".join(sentences[j] for j in sorted(chosen + [i])))
+            pred = normalize(" ".join(sentences[j] for j in sorted(chosen + [i])))
             score = rouge_one(pred, gold_n)["rouge1"]
             if score > best_score:
                 best_score = score

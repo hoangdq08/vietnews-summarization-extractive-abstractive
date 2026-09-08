@@ -1,15 +1,25 @@
-"""ROUGE trên chuỗi đã tách từ (giữ dấu _). Cùng tokenizer cho cả 3 hệ."""
+"""ROUGE F1. Caller nên gọi normalize() trước khi so extractive với ViT5."""
 
-from rouge_score import rouge_scorer
+from rouge_score.rouge_scorer import RougeScorer
+from rouge_score.tokenizers import Tokenizer
 
 
-def _ws_tokenize(text):
-    return text.split()
+class WhitespaceTokenizer(Tokenizer):
+    def tokenize(self, text):
+        return text.split()
+
+
+def normalize(text):
+    """Gold/extractive dùng dấu '_'; ViT5 thì không. Gỡ '_' trước ROUGE."""
+    return (text or "").replace("_", " ")
 
 
 def rouge_one(pred, ref):
-    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=False)
-    scorer._tokenizer.tokenize = _ws_tokenize
+    scorer = RougeScorer(
+        ["rouge1", "rouge2", "rougeL"],
+        use_stemmer=False,
+        tokenizer=WhitespaceTokenizer(),
+    )
     scores = scorer.score(ref, pred)
     return {
         "rouge1": scores["rouge1"].fmeasure,

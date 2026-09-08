@@ -8,14 +8,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from evaluate import rouge_mean, rouge_one
+from evaluate import normalize, rouge_mean, rouge_one
 from extractive import lead_n, textrank
 from oracle import oracle_n
 from preprocess import load_docs
-
-
-def norm(text):
-    return (text or "").replace("_", " ")
 
 
 def main():
@@ -31,7 +27,6 @@ def main():
 
     pairs = {k: [] for k in systems}
     rows = []
-    greedy_n = 0
     max_sents = 0
     for i, doc in enumerate(docs, 1):
         sents = doc["sentences"]
@@ -47,10 +42,10 @@ def main():
         if pred_map:
             preds["vit5"] = pred_map.get(doc["id"], "")
         row = {"id": doc["id"], "n_sents": len(sents), "body_words": len(doc["body"].split())}
-        g = norm(gold)
+        g = normalize(gold)
         for name, pred in preds.items():
-            s = rouge_one(norm(pred), g)
-            pairs[name].append((norm(pred), g))
+            s = rouge_one(normalize(pred), g)
+            pairs[name].append((normalize(pred), g))
             row[f"{name}_r1"] = round(s["rouge1"], 4)
             row[f"{name}_r2"] = round(s["rouge2"], 4)
             row[f"{name}_rL"] = round(s["rougeL"], 4)

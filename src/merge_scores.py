@@ -8,13 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from evaluate import rouge_mean, rouge_one
+from evaluate import normalize, rouge_mean, rouge_one
 from extractive import lead_n, textrank
 from preprocess import load_docs
-
-
-def norm(text):
-    return (text or "").replace("_", " ")
 
 
 def main():
@@ -31,8 +27,8 @@ def main():
         vit5 = pred_map[doc["id"]]
         row = {"id": doc["id"]}
         for name, pred in (("lead3", lead), ("textrank", tr), ("vit5", vit5)):
-            s = rouge_one(norm(pred), norm(ref))
-            pairs[name].append((norm(pred), norm(ref)))
+            s = rouge_one(normalize(pred), normalize(ref))
+            pairs[name].append((normalize(pred), normalize(ref)))
             row[f"{name}_r1"] = round(s["rouge1"], 4)
             row[f"{name}_r2"] = round(s["rouge2"], 4)
             row[f"{name}_rL"] = round(s["rougeL"], 4)
