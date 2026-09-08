@@ -175,3 +175,5 @@ Chỉ ghi lệch so với **gold** hoặc sai sự thật so với thân bài kh
 2. Lead-3 an toàn về sự thật (câu lấy từ bài) nhưng hay **lệch gold** vì gold là sapo/kết luận, 3 câu đầu thân bài là diễn biến.
 3. TextRank đôi khi nhảy giữa đoạn hoặc trộn tin trong bài tổng hợp (000066).
 4. Gold dạng “an ninh 24h” (nhiều tin một bài) cả ba hệ đều yếu.
+
+Đối chiếu số trên đủ 100 bài (không lấy 64/100 của regex): `results/number_diff_verified.md` — 7 bài sai/ảo giác số, 13 bài sót án/tiền/số nạn nhân. 000001 và 000036 ở trên khớp nhóm đó.

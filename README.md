@@ -69,6 +69,8 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 | Trung (300–499) | 33 | 0.2638 | 0.2409 | 0.2549 |
 | Dài (≥500) | 33 | 0.2298 | 0.2194 | 0.2519 |
 
+Đối chiếu số ViT5 vs gold (n=100, đọc tay): script `src/check_numbers.py` ra 64/100 bài lệch token số — **không dùng làm tỷ lệ lỗi**. Sau khi lọc ngày/tuổi/`hai` vs `2` và số lấy từ thân bài: **7 bài sai/ảo giác số**, **13 bài sót số then chốt** (án, tiền, số nạn nhân). Chi tiết `results/number_diff_verified.md`.
+
 ## Abstractive (Kaggle)
 
 1. Tạo notebook Kaggle, bật **GPU T4 x2**, **Internet On**, notebook Private.
