@@ -506,6 +506,55 @@ function card(slide, x, y, w, h, fill) {
   footer(s, 12);
 }
 
+// 11c N=500 EXTRACTIVE
+{
+  const s = pres.addSlide();
+  s.background = { color: C.bg };
+  header(s, "10c", "N = 500  ·  EXTRACTIVE", "000001–000500");
+  s.addText("Lead-1 > Lead-3. Oracle-3 ≈ 0,46 — còn câu tốt hơn 3 câu đầu.", {
+    x: 0.55, y: 0.95, w: 12.2, h: 0.4,
+    fontFace: FONT.serif, fontSize: 20, color: C.ink, margin: 0,
+  });
+  const tbl500 = [
+    [
+      { text: "Hệ", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "ROUGE-1", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "ROUGE-2", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "ROUGE-L", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+    ],
+    ["Lead-1", "0.2719", "0.1305", "0.2092"],
+    ["Lead-3", "0.2569", "0.1294", "0.1856"],
+    ["Lead-5", "0.2256", "0.1199", "0.1624"],
+    ["TextRank-3", "0.2499", "0.1198", "0.1815"],
+    [
+      { text: "Oracle-3", options: { fill: { color: C.cardWarm }, bold: true } },
+      { text: "0.4646", options: { fill: { color: C.cardWarm }, bold: true } },
+      { text: "0.2793", options: { fill: { color: C.cardWarm }, bold: true } },
+      { text: "0.3410", options: { fill: { color: C.cardWarm }, bold: true } },
+    ],
+  ];
+  s.addTable(tbl500, {
+    x: 0.55, y: 1.5, w: 7.5, h: 4.6,
+    colW: [2.2, 1.77, 1.77, 1.76],
+    border: { pt: 0.5, color: C.rule },
+    fontFace: FONT.sans,
+    fontSize: 15,
+    color: C.body,
+    valign: "middle",
+    align: "center",
+  });
+  card(s, 8.3, 1.5, 4.45, 4.6, C.dark);
+  s.addText("Đọc bảng", {
+    x: 8.55, y: 1.7, w: 4.0, h: 0.35,
+    fontFace: FONT.sans, fontSize: 13, color: C.onDarkMuted, margin: 0,
+  });
+  s.addText("Gold gần sapo nên 1 câu đầu đã khớp. Oracle chứng tỏ extractive chưa hết sức — Lead-3 chưa chọn đúng 3 câu. ViT5-500: notebook Kaggle riêng, chưa chạy.", {
+    x: 8.55, y: 2.2, w: 4.0, h: 3.5,
+    fontFace: FONT.sans, fontSize: 15, color: C.onDark, margin: 0,
+  });
+  footer(s, "12b");
+}
+
 // 12 ERROR OVERVIEW
 {
   const s = pres.addSlide();

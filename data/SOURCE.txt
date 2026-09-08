@@ -7,3 +7,5 @@ Cách lấy: 100 file đầu theo tên (000001.txt.seg … 000100.txt.seg)
   3+) thân bài
 Dữ liệu đã tách từ sẵn (dấu _). Không gọi lại underthesea trên tập này.
 Ngày clone: 2026-09-08
+
+Lớp mở rộng: data/test_500 = 000001.txt.seg … 000500.txt.seg (cùng split test_tokenized, không xáo).
