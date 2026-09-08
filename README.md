@@ -49,6 +49,14 @@ Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 | TextRank | 0.2428 | 0.1100 | 0.1730 |
 | ViT5 | 0.2664 | 0.1341 | 0.2084 |
 
+ROUGE-1 theo độ dài thân bài (ngưỡng 300/500 từ, ~33 bài/nhóm):
+
+| Nhóm | n | Lead-3 | TextRank | ViT5 |
+|---|---|---|---|---|
+| Ngắn (<300) | 34 | 0.2581 | 0.2672 | 0.2919 |
+| Trung (300–499) | 33 | 0.2638 | 0.2409 | 0.2549 |
+| Dài (≥500) | 33 | 0.2298 | 0.2194 | 0.2519 |
+
 ## Abstractive (Kaggle)
 
 1. Tạo notebook Kaggle, bật **GPU T4 x2**, **Internet On**, notebook Private.

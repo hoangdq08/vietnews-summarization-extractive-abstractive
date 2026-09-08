@@ -455,6 +455,57 @@ function card(slide, x, y, w, h, fill) {
   footer(s, 11);
 }
 
+// 11b LENGTH
+{
+  const s = pres.addSlide();
+  s.background = { color: C.bg };
+  header(s, "10b", "THEO ĐỘ DÀI BÀI", "n ≈ 33 / nhóm");
+  s.addText("Ngưỡng 300 / 500 từ — làm tròn tertile (p33≈298, p67≈492).", {
+    x: 0.55, y: 0.95, w: 12.2, h: 0.35,
+    fontFace: FONT.serif, fontSize: 18, color: C.ink, margin: 0,
+  });
+  const tbl = [
+    [
+      { text: "Nhóm", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "n", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "Lead-3 R-1", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "TextRank R-1", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+      { text: "ViT5 R-1", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
+    ],
+    ["Ngắn  <300", "34", "0.2581", "0.2672", "0.2919"],
+    ["Trung  300–499", "33", "0.2638", "0.2409", "0.2549"],
+    ["Dài  ≥500", "33", "0.2298", "0.2194", "0.2519"],
+  ];
+  s.addTable(tbl, {
+    x: 0.55, y: 1.45, w: 12.2, h: 2.7,
+    colW: [2.6, 1.4, 2.73, 2.73, 2.74],
+    border: { pt: 0.5, color: C.rule },
+    fontFace: FONT.sans,
+    fontSize: 15,
+    color: C.body,
+    valign: "middle",
+    align: "center",
+  });
+  const notes = [
+    ["Ngắn", "ViT5 cao nhất cả R-1/2/L."],
+    ["Trung", "Lead-3 cao nhất (0.2638)."],
+    ["Dài", "Cả ba giảm; ViT5 vẫn hơn extractive."],
+  ];
+  notes.forEach((n, i) => {
+    const x = 0.55 + i * 4.15;
+    card(s, x, 4.4, 3.95, 1.85);
+    s.addText(n[0], {
+      x: x + 0.2, y: 4.55, w: 3.55, h: 0.35,
+      fontFace: FONT.sans, fontSize: 14, color: C.accent, margin: 0,
+    });
+    s.addText(n[1], {
+      x: x + 0.2, y: 5.0, w: 3.55, h: 1.0,
+      fontFace: FONT.sans, fontSize: 15, color: C.body, margin: 0,
+    });
+  });
+  footer(s, 12);
+}
+
 // 12 ERROR OVERVIEW
 {
   const s = pres.addSlide();
@@ -484,7 +535,7 @@ function card(slide, x, y, w, h, fill) {
       fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0, valign: "middle",
     });
   });
-  footer(s, 12);
+  footer(s, 13);
 }
 
 // 13 EXAMPLES
@@ -517,7 +568,7 @@ function card(slide, x, y, w, h, fill) {
       fontFace: FONT.sans, fontSize: 15, color: C.accent, margin: 0,
     });
   });
-  footer(s, 13);
+  footer(s, 14);
 }
 
 // 14 DEMO
@@ -553,7 +604,7 @@ function card(slide, x, y, w, h, fill) {
     x: 0.55, y: 5.45, w: 12.2, h: 0.7,
     fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0,
   });
-  footer(s, 14);
+  footer(s, 15);
 }
 
 // 15 CONCLUSION
@@ -570,7 +621,7 @@ function card(slide, x, y, w, h, fill) {
     "Chỉ 100 bài, không phải full test gốc paper.",
     "ViT5 đã học Vietnews; không tách được “khả năng mô hình” với “đã thấy miền này”.",
     "Gold dạng bản tin 24h (nhiều tin/bài) cả ba hệ đều yếu.",
-    "Chưa đo latency; chưa 500 bài (L3 bỏ qua).",
+    "Chưa đo latency; chưa full test paper.",
   ];
   card(s, 0.55, 1.1, 6.1, 5.4);
   card(s, 6.85, 1.1, 5.9, 5.4, C.cardWarm);
@@ -594,7 +645,7 @@ function card(slide, x, y, w, h, fill) {
       fontFace: FONT.sans, fontSize: 15, color: C.body, margin: 0,
     });
   });
-  footer(s, 15);
+  footer(s, 16);
 }
 
 // 16 NEXT
@@ -626,7 +677,7 @@ function card(slide, x, y, w, h, fill) {
       fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0,
     });
   });
-  footer(s, 16);
+  footer(s, 17);
 }
 
 // 17 REFS
@@ -647,7 +698,7 @@ function card(slide, x, y, w, h, fill) {
       fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0,
     });
   });
-  footer(s, 17);
+  footer(s, 18);
 }
 
 // 18 QA

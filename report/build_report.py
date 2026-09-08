@@ -243,6 +243,28 @@ def story():
             "trong khi TextRank có thể nhảy vào đoạn giữa bài. Không kết luận SOTA.",
             S["body"],
         ),
+        P("6.1. Theo độ dài bài", S["h2"]),
+        P(
+            "Chia 100 bài thành ba nhóm gần bằng nhau theo số token thân bài "
+            "(ngưỡng 300 và 500: làm tròn tertile p33≈298, p67≈492). Cùng tokenizer với bảng 1.",
+            S["body"],
+        ),
+        P("Bảng 1b. ROUGE-1 theo độ dài thân bài.", S["caption"]),
+        make_table(
+            [
+                ["Nhóm", "n", "Lead-3", "TextRank", "ViT5"],
+                ["Ngắn (<300 từ)", "34", "0,2581", "0,2672", "0,2919"],
+                ["Trung (300–499)", "33", "0,2638", "0,2409", "0,2549"],
+                ["Dài (≥500 từ)", "33", "0,2298", "0,2194", "0,2519"],
+            ],
+            [4.0 * cm, 1.8 * cm, 3.0 * cm, 3.0 * cm, 3.0 * cm],
+        ),
+        Spacer(1, 8),
+        P(
+            "Bài ngắn: ViT5 cao nhất. Bài trung: Lead-3 cao nhất. Bài dài: cả ba giảm, ViT5 vẫn hơn extractive. "
+            "TextRank không thắng nhóm nào trên R-1. Đây là quan sát trên 100 bài, không suy nguyên nhân chắc.",
+            S["body"],
+        ),
         P("7. Phân tích lỗi (20 bài đọc tay)", S["h1"]),
         P(
             "Đối chiếu gold với ba hệ trên 20 id rải trong test-100 "
