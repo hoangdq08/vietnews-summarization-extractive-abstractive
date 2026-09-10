@@ -1,42 +1,49 @@
-# So sánh tóm tắt rút trích và tóm lược trên tin tức tiếng Việt
+# Vietnews summarization
 
-*A Comparative Study of Extractive and Abstractive Summarization for Vietnamese News*
+So sánh tóm tắt **rút trích** (Lead-n, TextRank) và **tóm lược** (ViT5) trên tin tức tiếng Việt.
 
-Đồ án CS221 — **Nhóm 14:** Nguyễn Trí Toàn (26410135), Nguyễn Văn Thái (26410108), Đỗ Quốc Hoàng (26410043).
+Input: thân bài đã tách từ. Output: bản tóm tắt ngắn + ROUGE so với sapo (gold). Demo Gradio ba cột, chạy local hoặc Docker — không cần GPU lúc xem.
 
-So sánh **Lead-3**, **TextRank** (rút trích) và **ViT5** (tóm lược) trên Vietnews.
+Dữ liệu: [Vietnews](https://github.com/ThanhChinhBK/vietnews) `test_tokenized`. Checkpoint: [`VietAI/vit5-base-vietnews-summarization`](https://huggingface.co/VietAI/vit5-base-vietnews-summarization) (off-the-shelf, không fine-tune).
 
-Câu hỏi: trên cùng tập test, ba hệ khác nhau thế nào về ROUGE, và khi đọc tay thì mỗi hệ sai kiểu gì?
-
-## Dữ liệu
-
-- Nguồn: https://github.com/ThanhChinhBK/vietnews — `data/test_tokenized`
-- Local: `python src/fetch_vietnews.py --n 500` → `data/test_tokenized/` (không commit file `.seg`)
-- Kaggle: notebook tự tải, **không upload dataset**
-- 100 file đầu = bảng khóa; 500 file đầu = bảng mở rộng. Cùng thứ tự tên `000001.txt.seg` …
-- File đã **tách từ sẵn** (dấu `_`). Không gọi lại underthesea.
-
-## Cài đặt
+## Quick start
 
 ```bash
-cd vietnews-summarization-extractive-abstractive
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python src/fetch_vietnews.py --n 500
+python app/demo.py
 ```
 
-## Chấm ROUGE (máy local)
+Mở http://127.0.0.1:7860
+
+Corpus **không** nằm trong git. `fetch_vietnews.py` tải `000001.txt.seg` … `000{N}.txt.seg` từ GitHub vào `data/test_tokenized/`. Demo đọc disk, không gọi mạng lúc mở.
 
 ```bash
-python src/run_eval.py --limit 100
-python src/run_eval.py --limit 500
-python src/scores_by_length.py
+docker build -t vietnews-demo .
+docker run --rm -p 7860:7860 vietnews-demo
 ```
 
-Cần `results/preds.json` (n=100) và `results/preds_500.json` (n=500) từ Kaggle.
+Build Docker cần Internet (image tự fetch 100 bài).
 
-Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
+## Pipeline
+
+| Bước | Chỗ chạy | Lệnh |
+|---|---|---|
+| Lấy test set | local / Kaggle | `python src/fetch_vietnews.py --n 500` |
+| Extractive | local CPU | Lead-n, TextRank trong `src/extractive.py` |
+| Abstractive | Kaggle GPU | `notebooks/kaggle_abstractive.ipynb` → `results/preds.json` |
+| ROUGE | local | `python src/run_eval.py --limit 100` hoặc `--limit 500` |
+| Demo | local / Docker | `python app/demo.py` |
+
+ViT5 cần GPU. Notebook Kaggle: **T4 x2**, **Internet On**, không Add Dataset. Cell 1 cài `transformers==4.44.2` → **Restart session** → chạy tiếp (`N = 500`). Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`. Tải `/kaggle/working/preds_500.json` về `results/`. Session bị kill thì chạy lại cell infer (resume).
+
+## Results
+
+ROUGE F1, tokenizer: thay `_` → space rồi split (gold/extractive giữ `_`, ViT5 thì không).
+
+**n = 100** (`000001`–`000100`)
 
 | Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
 |---|---|---|---|
@@ -44,7 +51,7 @@ Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 | TextRank | 0.2428 | 0.1100 | 0.1730 |
 | ViT5 | 0.2664 | 0.1341 | 0.2084 |
 
-Cùng split, **500 bài** (`000001`–`000500`). Bảng n=100 **không đổi**. 100 pred đầu của `preds_500.json` trùng `preds.json`.
+**n = 500** (`000001`–`000500`). 100 pred đầu trùng n=100.
 
 | Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
 |---|---|---|---|
@@ -55,9 +62,9 @@ Cùng split, **500 bài** (`000001`–`000500`). Bảng n=100 **không đổi**.
 | ViT5 | 0.2784 | 0.1474 | 0.2233 |
 | Oracle-3 | 0.4646 | 0.2793 | 0.3410 |
 
-Lead-1 > Lead-3: gold gần câu mở đầu. ViT5 (0.2784) hơn Lead-1 (0.2719) một chút. Oracle-3 ≈ 0.46: extractive còn cửa.
+Lead-1 > Lead-3: gold gần câu mở đầu. ViT5 hơn Lead-1 một chút. Oracle-3 ≈ 0.46: extractive còn cửa.
 
-ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhóm):
+ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ):
 
 | Nhóm | n | Lead-3 | TextRank | ViT5 |
 |---|---|---|---|---|
@@ -65,43 +72,31 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 | Trung (300–499) | 33 | 0.2638 | 0.2409 | 0.2549 |
 | Dài (≥500) | 33 | 0.2298 | 0.2194 | 0.2519 |
 
-Đối chiếu số ViT5 vs gold (n=100, đọc tay): script `src/check_numbers.py` ra 64/100 bài lệch token số — **không dùng làm tỷ lệ lỗi**. Sau khi lọc: **7 bài sai/ảo giác số**, **13 bài sót số then chốt**. Chi tiết `results/number_diff_verified.md`.
-
-## Abstractive (Kaggle) — không upload data
-
-ViT5 **chỉ chạy trên Kaggle**. Không Add Dataset.
-
-1. New notebook, **GPU T4 x2**, **Internet On**, Private.
-2. Copy `notebooks/kaggle_abstractive.ipynb`.
-3. Cell pip `transformers==4.44.2` → **Restart session** → chạy tiếp. **Đừng Run All.**
-4. `N = 500` (đổi `100` nếu cần bản khóa). Tự tải file từ GitHub `ThanhChinhBK/vietnews`.
-5. Model: `VietAI/vit5-base-vietnews-summarization`. Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`.
-6. Tải `/kaggle/working/preds_500.json` (hoặc `preds.json` nếu N=100) về `results/`.
-
-Đã có pred. Chấm lại: `python src/run_eval.py --limit 500`. Session bị kill: chạy lại cell infer (resume). Một notebook: đổi `N = 100` hoặc `500`.
-
-Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
-
-## Demo
-
-Cần đã `fetch_vietnews --n 100` (hoặc 500). Demo **không** gọi GitHub lúc mở.
-
 ```bash
-python app/demo.py
+python src/run_eval.py --limit 100
+python src/run_eval.py --limit 500
+python src/scores_by_length.py
 ```
 
-Docker (build máy có mạng — image tự kéo 100 bài):
+ROUGE không thay cho đọc tay. Trên 100 bài, ViT5 có **7** trường hợp sai/ảo giác số và **13** bài sót án/tiền/số nạn nhân — không dùng 64/100 của regex. Chi tiết: `results/error_analysis.md`, `results/number_diff_verified.md`.
 
-```bash
-docker build -t vietnews-demo .
-docker run --rm -p 7860:7860 vietnews-demo
+## Layout
+
+```
+src/           fetch, preprocess, extractive, oracle, ROUGE, eval
+app/demo.py    Gradio, 100 bài, ViT5 từ preds.json
+notebooks/     inference ViT5 trên Kaggle
+data/          SOURCE.txt; test_tokenized/ do fetch (gitignored)
+results/       preds, scores, error analysis
+Dockerfile     demo cổng 7860
 ```
 
-Mở http://127.0.0.1:7860
+`src/paths.py` là nguồn đường dẫn và id (`000001.txt.seg` …).
 
-## Nộp
+## Notes
 
-- Slide 15–20 trang
-- Báo cáo PDF
-- GitHub (README + requirements) — public hoặc add thầy trước khi nộp
-- Demo 15 phút (chạy local, không phụ thuộc Kaggle lúc bảo vệ)
+- Không train lại ViT5 trên Vietnews (checkpoint đã học miền này).
+- Không crawl bài mới; không tách từ lại trên gold.
+- Demo không gọi Hugging Face lúc runtime.
+
+Nguyễn Trí Toàn, Nguyễn Văn Thái, Đỗ Quốc Hoàng.

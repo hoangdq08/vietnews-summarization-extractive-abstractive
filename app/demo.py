@@ -49,8 +49,8 @@ def main():
 
     with gr.Blocks(title="Tóm tắt tin tức tiếng Việt") as demo:
         gr.Markdown(
-            "## So sánh tóm tắt rút trích và tóm lược trên tin tức tiếng Việt\n"
-            "100 bài Vietnews test. Lead-3 / TextRank chạy local; ViT5 lấy từ `preds.json`."
+            "## Vietnews summarization\n"
+            "Lead-3 và TextRank chạy local. ViT5 lấy từ `results/preds.json` (không gọi GPU)."
         )
         picker = gr.Dropdown(choices, value=choices[0], label="Bài test")
         title = gr.Textbox(label="Tiêu đề", lines=1)
