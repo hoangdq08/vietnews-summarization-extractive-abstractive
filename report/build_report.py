@@ -103,8 +103,8 @@ def make_table(rows, col_widths, header=True):
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), 6),
         ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-        ("TOPPADDING", (0, 0), (-1, -1), 5),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
         ("GRID", (0, 0), (-1, -1), 0.4, RULE),
         ("BACKGROUND", (0, 1), (-1, -1), CREAM),
     ]
@@ -140,7 +140,7 @@ def story():
         Spacer(1, 18),
         P("So sánh tóm tắt rút trích và tóm lược<br/>trên tin tức tiếng Việt", S["cover_title"]),
         P("A comparative study of extractive and abstractive summarization on Vietnews", S["cover_sub"]),
-        P("Lead-3 · TextRank · ViT5 (checkpoint VietAI, không fine-tune)<br/>100 bài test đầu · ROUGE-1/2/L · đọc tay 20 bài", S["cover_sub"]),
+        P("Lead-3 · TextRank · ViT5 (checkpoint VietAI, không fine-tune)<br/>ROUGE n=100 và n=500 · đọc tay 20 bài", S["cover_sub"]),
         Spacer(1, 24),
         P("Nhóm 14", S["cover_kicker"]),
         P(
@@ -161,8 +161,8 @@ def story():
             "<font color='#B8432A'>VietAI/vit5-base-vietnews-summarization</font>. "
             "Nhóm không fine-tune ViT5. Độ đo là ROUGE-1/2/L (F1) sau khi thay dấu gạch dưới "
             "bằng khoảng trắng trên cả bản tóm tắt và gold. ViT5 đạt ROUGE cao hơn một chút "
-            "(R-1 = 0,2664) so với Lead-3 (0,2507) và TextRank (0,2428). Đọc tay 20 bài cho "
-            "thấy ViT5 vẫn sai tên, đảo polarity và bịa chi tiết; Lead-3 ít bịa nhưng hay lệch gold.",
+            "(R-1 = 0,2664) so với Lead-3 (0,2507) và TextRank (0,2428). Trên 500 bài, ViT5 R-1 = 0,2784 "
+            "(Lead-1 = 0,2719). Đọc tay 20 bài: ViT5 vẫn sai tên, đảo polarity, bịa chi tiết; Lead-3 ít bịa nhưng hay lệch gold.",
             S["body"],
         ),
         P("2. Đặt vấn đề", S["h1"]),
@@ -265,13 +265,16 @@ def story():
             "TextRank không thắng nhóm nào trên R-1. Đây là quan sát trên 100 bài, không suy nguyên nhân chắc.",
             S["body"],
         ),
-        P("6.2. Extractive trên 500 bài (Lead-k và Oracle)", S["h2"]),
+        P("6.2. 500 bài (Lead-k, Oracle, ViT5)", S["h2"]),
         P(
-            "Cùng split test, id 000001–000500. Oracle-3 chọn tổ hợp 3 câu trong bài làm ROUGE-1 F1 với gold lớn nhất "
-            "(tối đa 39 câu/bài). ViT5 trên 500 bài chưa chạy.",
+            "Cùng split, 000001–000500. Generate ViT5 giữ n=100 (100 pred đầu trùng preds.json). "
+            "Oracle-3: tổ hợp 3 câu tối đa ROUGE-1 vs gold. Bảng n=100 không đổi. "
+            "Lead-1 > Lead-3 > Lead-5 (gold gần sapo). ViT5 0,2784 hơn Lead-1 0,2719 một chút. "
+            "Oracle-3 ≈ 0,46 vs Lead-3 ≈ 0,26: extractive còn cửa.",
             S["body"],
         ),
-        P("Bảng 1c. ROUGE F1 extractive, n=500.", S["caption"]),
+        P("Bảng 1c. ROUGE F1, n=500.", S["caption"]),
+        KeepTogether([
         make_table(
             [
                 ["Hệ", "ROUGE-1", "ROUGE-2", "ROUGE-L"],
@@ -279,16 +282,14 @@ def story():
                 ["Lead-3", "0,2569", "0,1294", "0,1856"],
                 ["Lead-5", "0,2256", "0,1199", "0,1624"],
                 ["TextRank-3", "0,2499", "0,1198", "0,1815"],
+                ["ViT5", "0,2784", "0,1474", "0,2233"],
                 ["Oracle-3", "0,4646", "0,2793", "0,3410"],
             ],
             [4.2 * cm, 3.5 * cm, 3.5 * cm, 3.5 * cm],
         ),
-        Spacer(1, 8),
-        P(
-            "Lead-1 > Lead-3 > Lead-5: gold gần câu mở đầu; lấy thêm câu làm giảm overlap n-gram. "
-            "Oracle-3 ≈ 0,46 trong khi Lead-3 ≈ 0,26: extractive còn cửa, Lead-3 chưa chọn đúng câu.",
-            S["body"],
-        ),
+        ]),
+        Spacer(1, 4),
+        KeepTogether([
         P("7. Phân tích lỗi (20 bài đọc tay)", S["h1"]),
         P(
             "Đối chiếu gold với ba hệ trên 20 id rải trong test-100 "
@@ -296,6 +297,7 @@ def story():
             S["body"],
         ),
         P("Bảng 2. Ba ví dụ ViT5 sai sự thật dù ROUGE có thể không thấp.", S["caption"]),
+        ]),
     ]
     st.append(
         make_table(
@@ -348,17 +350,12 @@ def story():
         ),
         P("9. Kết luận và hạn chế", S["h1"]),
         P(
-            "Trên 100 bài test đầu Vietnews, ViT5 (checkpoint sẵn) có ROUGE cao hơn Lead-3 và TextRank một chút. "
-            "Đọc tay cho thấy abstractive vẫn ảo giác. Extractive an toàn hơn về chữ, dễ lệch sapo.",
+            "Trên 100 bài, ViT5 ROUGE cao hơn Lead-3 và TextRank một chút; trên 500 bài hơn Lead-1 một chút "
+            "(0,2784 vs 0,2719). Đọc tay: abstractive vẫn ảo giác. Extractive an toàn về chữ, dễ lệch sapo.",
             S["body"],
         ),
-        P("Hạn chế: chỉ 100 bài, không phải toàn bộ test paper; ViT5 đã học Vietnews nên không tách được "
-          "khả năng mô hình với việc đã thấy miền này; chưa đo thời gian sinh câu; chưa mở 500 bài.", S["body"]),
-        P(
-            "Nếu làm tiếp: đếm sai tên/số có hệ thống trên nhiều bài hơn; tách các bài “an ninh 24h”; "
-            "không fine-tune trùng Vietnews.",
-            S["body"],
-        ),
+        P("Hạn chế: đọc tay/lệch số trên 100 bài; ViT5 đã học Vietnews nên không tách khả năng mô hình với "
+          "việc đã thấy miền này; chưa đo latency. Không fine-tune trùng Vietnews.", S["body"]),
         P("10. Tài liệu", S["h1"]),
         P("1. Vietnews / VNDS: https://github.com/ThanhChinhBK/vietnews", S["bullet"]),
         P(
@@ -372,10 +369,9 @@ def story():
             "5. Repo nhóm: https://github.com/hoangdq08/vietnews-summarization-extractive-abstractive",
             S["bullet"],
         ),
-        Spacer(1, 16),
         P(
-            "Phụ lục số liệu: results/scores.csv, results/scores_mean.txt, results/preds.json, "
-            "results/error_analysis.md. Slide: slides/CS221-Vietnews-tom-tat.pptx.",
+            "Phụ lục: results/scores.csv, scores_500.csv, preds.json, preds_500.json, error_analysis.md. "
+            "Slide: slides/CS221-Vietnews-tom-tat.pptx.",
             S["caption"],
         ),
     ]

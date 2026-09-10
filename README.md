@@ -49,7 +49,7 @@ Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 | TextRank | 0.2428 | 0.1100 | 0.1730 |
 | ViT5 | 0.2664 | 0.1341 | 0.2084 |
 
-Extractive trên **500 bài** (`000001`–`000500`, chưa có ViT5-500):
+Cùng split, **500 bài** (`000001`–`000500`). Bảng n=100 ở trên **không đổi**. 100 pred đầu của `preds_500.json` trùng `preds.json`.
 
 | Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
 |---|---|---|---|
@@ -57,9 +57,10 @@ Extractive trên **500 bài** (`000001`–`000500`, chưa có ViT5-500):
 | Lead-3 | 0.2569 | 0.1294 | 0.1856 |
 | Lead-5 | 0.2256 | 0.1199 | 0.1624 |
 | TextRank-3 | 0.2499 | 0.1198 | 0.1815 |
+| ViT5 | 0.2784 | 0.1474 | 0.2233 |
 | Oracle-3 | 0.4646 | 0.2793 | 0.3410 |
 
-Lead-1 > Lead-3: gold gần câu mở đầu. Oracle-3 ≈ 0.46: vẫn còn 3 câu trong bài khớp gold hơn Lead-3. ViT5-500: copy `notebooks/kaggle_abstractive_500.ipynb` lên Kaggle (**Internet On**, không cần upload dataset — notebook tự lấy 000001–000500 từ GitHub), tải `preds_500.json` về `results/`, rồi `python src/run_eval_500.py`.
+Lead-1 > Lead-3: gold gần câu mở đầu. ViT5 (0.2784) hơn Lead-1 (0.2719) một chút. Oracle-3 ≈ 0.46: extractive còn cửa.
 
 ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhóm):
 
@@ -81,7 +82,7 @@ n=100 (đã khóa):
 4. Generate theo model card: thêm `</s>`, `max_length=256`, `early_stopping=True`.
 5. Tải `preds.json` về `results/`.
 
-n=500: copy `notebooks/kaggle_abstractive_500.ipynb`. **Không upload `data/test_500`.** Cùng GPU + Internet On; notebook tự lấy file từ [ThanhChinhBK/vietnews](https://github.com/ThanhChinhBK/vietnews) (`data/test_tokenized`, `000001`–`000500`). Tải `preds_500.json` về `results/`, chạy `python src/run_eval_500.py`. Session bị kill thì chạy lại cell infer — file `/kaggle/working/preds_500.json` resume được.
+n=500 (đã có `results/preds_500.json`): cùng generate n=100. Notebook `kaggle_abstractive_500.ipynb` **không upload dataset** — Internet On, tự lấy `000001`–`000500` từ GitHub. Chấm lại: `python src/run_eval_500.py`.
 
 Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 
