@@ -1,7 +1,6 @@
-ROUGE F1, n=100, cùng id 000001–000100
-Tokenizer: thay '_' bằng space rồi split khoảng trắng (cả pred và ref).
-Lý do: gold/extractive có dấu '_'; ViT5 sinh lẫn có/không có '_'.
+ROUGE F1, n=100, id 000001–000100, '_' → space.
+max sentences/doc = 38
 
-Lead-3     rouge1=0.2507  rouge2=0.1296  rougeL=0.1841
-TextRank   rouge1=0.2428  rouge2=0.1100  rougeL=0.1730
-ViT5       rouge1=0.2664  rouge2=0.1341  rougeL=0.2084
+Lead-3       rouge1=0.2507  rouge2=0.1296  rougeL=0.1841  n=100
+TextRank     rouge1=0.2428  rouge2=0.1100  rougeL=0.1730  n=100
+ViT5         rouge1=0.2664  rouge2=0.1341  rougeL=0.2084  n=100
