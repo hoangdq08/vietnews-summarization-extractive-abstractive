@@ -1,11 +1,10 @@
-"""ROUGE theo độ dài thân bài trên n=100. Ngưỡng 300/500 (tertile làm tròn)."""
+"""ROUGE theo độ dài thân bài (n=100, ngưỡng 300/500)."""
 
 from __future__ import annotations
 
 import csv
 
 from paths import RESULTS
-from preprocess import load_docs
 
 KEYS = [
     "lead3_r1", "lead3_r2", "lead3_rL",
@@ -36,19 +35,20 @@ def main() -> None:
     if not scores_path.exists():
         raise SystemExit("thiếu results/scores.csv — python src/run_eval.py --limit 100")
     with scores_path.open(encoding="utf-8") as f:
-        by_id = {row["id"]: row for row in csv.DictReader(f)}
-    docs = load_docs(100)
+        rows = list(csv.DictReader(f))
+    if not rows or "body_words" not in rows[0]:
+        raise SystemExit("chạy lại python src/run_eval.py --limit 100")
     groups = {"ngan": [], "trung": [], "dai": []}
-    for doc in docs:
-        n_words = len(doc["body"].split())
-        groups[bucket(n_words)].append((n_words, by_id[doc["id"]]))
-    lens = [len(d["body"].split()) for d in docs]
+    for rec in rows:
+        n_words = int(rec["body_words"])
+        groups[bucket(n_words)].append((n_words, rec))
+    lens = [int(r["body_words"]) for r in rows]
     lines = [
         "ROUGE F1 theo độ dài thân bài (số token cách trắng trên text đã tách từ).",
         "Ngưỡng 300 / 500: làm tròn tertile trên 100 bài (p33≈298, p67≈492) để mỗi nhóm ~1/3.",
         "Cùng tokenizer với bảng chính: '_' → space.",
         "",
-        f"n=100; min={min(lens)}; median={sorted(lens)[len(lens)//2]}; max={max(lens)}.",
+        f"n={len(rows)}; min={min(lens)}; median={sorted(lens)[len(lens)//2]}; max={max(lens)}.",
         "",
         f"{'nhóm':16} {'n':3}  độ dài     Lead-3 R1/R2/RL           TextRank                 ViT5",
     ]

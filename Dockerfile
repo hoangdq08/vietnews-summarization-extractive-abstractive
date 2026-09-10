@@ -1,6 +1,7 @@
 FROM python:3.11-slim-bookworm
 
 WORKDIR /app
+ENV PYTHONPATH=/app/src
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     && pip install --no-cache-dir "fastapi==0.115.6" "starlette==0.41.3"
