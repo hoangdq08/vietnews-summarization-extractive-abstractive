@@ -357,7 +357,7 @@ function card(slide, x, y, w, h, fill) {
       { text: "Hạng mục", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
       { text: "Chi tiết", options: { fill: { color: C.dark }, color: C.onDark, bold: true } },
     ],
-    ["Tập chấm", "100 id đầu test_tokenized; file data/test_ids.txt"],
+    ["Tập chấm", "100 id đầu test_tokenized (000001–000100)"],
     ["Extractive", "Mac mini M4, CPU, sklearn TF-IDF"],
     ["ViT5", "Kaggle 2× Tesla T4; 1 GPU cuda:0"],
     ["Tokenizer load", "T5Tokenizer; gỡ transformers 5, cài 4.44.2 (tránh KeyError: 0)"],

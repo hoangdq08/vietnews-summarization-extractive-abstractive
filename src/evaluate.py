@@ -1,4 +1,4 @@
-"""ROUGE F1. Caller nên gọi normalize() trước khi so extractive với ViT5."""
+"""ROUGE F1. Gọi normalize() trước khi so extractive với ViT5."""
 
 from rouge_score.rouge_scorer import RougeScorer
 from rouge_score.tokenizers import Tokenizer
@@ -14,13 +14,15 @@ def normalize(text):
     return (text or "").replace("_", " ")
 
 
+_SCORER = RougeScorer(
+    ["rouge1", "rouge2", "rougeL"],
+    use_stemmer=False,
+    tokenizer=WhitespaceTokenizer(),
+)
+
+
 def rouge_one(pred, ref):
-    scorer = RougeScorer(
-        ["rouge1", "rouge2", "rougeL"],
-        use_stemmer=False,
-        tokenizer=WhitespaceTokenizer(),
-    )
-    scores = scorer.score(ref, pred)
+    scores = _SCORER.score(ref, pred)
     return {
         "rouge1": scores["rouge1"].fmeasure,
         "rouge2": scores["rouge2"].fmeasure,

@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 COPY src/ src/
 COPY app/ app/
-RUN python src/fetch_vietnews.py --n 100 --dest data/test_tokenized
+RUN python src/fetch_vietnews.py --n 100
 
 COPY results/preds.json results/preds.json
 COPY results/scores.csv results/scores.csv

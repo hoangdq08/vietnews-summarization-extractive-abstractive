@@ -5,56 +5,47 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from extractive import lead_n, textrank
-from fetch_vietnews import file_ids
-from preprocess import DATA_DIR, load_docs
-
-
-def load_pred_map():
-    path = ROOT / "results" / "preds.json"
-    if not path.exists():
-        return {}
-    return {row["id"]: row.get("pred", "") for row in json.loads(path.read_text(encoding="utf-8"))}
-
-
-def load_scores():
-    path = ROOT / "results" / "scores.csv"
-    if not path.exists():
-        return {}
-    out = {}
-    with path.open(encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            out[row["id"]] = row
-    return out
+from paths import RESULTS
+from preprocess import load_docs
 
 
 def main():
     import gradio as gr
 
-    docs = load_docs(DATA_DIR, names=file_ids(100))
+    docs = load_docs(100)
     by_id = {d["id"]: d for d in docs}
-    pred_map = load_pred_map()
-    scores = load_scores()
+    pred_path = RESULTS / "preds.json"
+    pred_map = {}
+    if pred_path.exists():
+        pred_map = {row["id"]: row.get("pred", "") for row in json.loads(pred_path.read_text(encoding="utf-8"))}
+    scores = {}
+    scores_path = RESULTS / "scores.csv"
+    if scores_path.exists():
+        with scores_path.open(encoding="utf-8") as f:
+            scores = {row["id"]: row for row in csv.DictReader(f)}
     choices = [f"{d['id']}  |  {d['title'][:80]}" for d in docs]
     choice_to_id = {c: c.split("  |  ", 1)[0] for c in choices}
 
     def run(choice):
         doc_id = choice_to_id[choice]
         doc = by_id[doc_id]
-        lead = lead_n(doc["sentences"], 3)
-        tr = textrank(doc["sentences"], 3)
-        vit5 = pred_map.get(doc_id, "(thiếu preds.json)")
         sc = scores.get(doc_id, {})
+
         def tag(name, text):
             r1 = sc.get(f"{name}_r1", "")
-            r2 = sc.get(f"{name}_r2", "")
-            rl = sc.get(f"{name}_rL", "")
-            head = f"ROUGE-1 {r1}  |  ROUGE-2 {r2}  |  ROUGE-L {rl}\n\n" if r1 else ""
+            head = f"ROUGE-1 {r1}  |  ROUGE-2 {sc.get(f'{name}_r2', '')}  |  ROUGE-L {sc.get(f'{name}_rL', '')}\n\n" if r1 else ""
             return head + text
-        return doc["title"], doc["abstract"], tag("lead3", lead), tag("textrank", tr), tag("vit5", vit5)
+
+        return (
+            doc["title"],
+            doc["abstract"],
+            tag("lead3", lead_n(doc["sentences"], 3)),
+            tag("textrank", textrank(doc["sentences"], 3)),
+            tag("vit5", pred_map.get(doc_id, "(thiếu preds.json)")),
+        )
 
     with gr.Blocks(title="Tóm tắt tin tức tiếng Việt") as demo:
         gr.Markdown(
