@@ -1,13 +1,9 @@
 Nguồn: https://github.com/ThanhChinhBK/vietnews
-Split dùng: data/test_tokenized
+Split: data/test_tokenized
 Kaggle: notebooks/kaggle_abstractive.ipynb tự tải 000001…000{N}.txt.seg (không upload dataset).
-Local (tuỳ chọn): python src/fetch_vietnews.py --n 500
-Cách lấy: N file đầu theo tên (000001.txt.seg …)
-Định dạng mỗi file (tách bằng dòng trống):
-  1) tiêu đề
-  2) tóm tắt mẫu (abstract)
-  3+) thân bài
-Dữ liệu đã tách từ sẵn (dấu _). Không gọi lại underthesea trên tập này.
-Ngày clone: 2026-09-08
-
-Lớp mở rộng: data/test_500 = 000001.txt.seg … 000500.txt.seg (cùng split test_tokenized, không xáo).
+Local: python src/fetch_vietnews.py --n 500
+  → data/test_tokenized/000001.txt.seg … 000500.txt.seg
+Không commit file .seg. Không clone train.
+Mỗi file (tách bằng dòng trống): tiêu đề / abstract / thân bài.
+Đã tách từ (dấu _). Không gọi lại underthesea.
+n=100 = 000001–000100 (bảng khóa). n=500 = 000001–000500.

@@ -30,7 +30,9 @@ def nums(text):
 
 
 def main():
-    docs = {d["id"]: d for d in load_docs(ROOT / "data" / "test_100", ROOT / "data" / "test_ids.txt", 100)}
+    from fetch_vietnews import DEFAULT_DEST, file_ids
+
+    docs = {d["id"]: d for d in load_docs(DEFAULT_DEST, names=file_ids(100))}
     preds = json.loads((ROOT / "results" / "preds.json").read_text(encoding="utf-8"))
     rows = []
     for row in preds:

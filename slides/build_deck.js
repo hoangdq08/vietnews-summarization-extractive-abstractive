@@ -1,3 +1,4 @@
+const path = require("path");
 const pptxgen = require("pptxgenjs");
 
 const pres = new pptxgen();
@@ -775,7 +776,7 @@ function card(slide, x, y, w, h, fill) {
 }
 
 pres.writeFile({
-  fileName: "/Users/hoangdo/Projects/AI/CS221.F31.LT.TTNT - Xử lý ngôn ngữ tự nhiên - Đặng Văn Thìn/vietnews-summarization-extractive-abstractive/slides/CS221-Vietnews-tom-tat.pptx",
+  fileName: path.join(__dirname, "CS221-Vietnews-tom-tat.pptx"),
 }).then(() => console.log("wrote pptx"))
   .catch((e) => {
     console.error(e);

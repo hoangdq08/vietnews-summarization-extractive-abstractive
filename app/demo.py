@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from extractive import lead_n, textrank
-from preprocess import load_docs
+from fetch_vietnews import file_ids
+from preprocess import DATA_DIR, load_docs
 
 
 def load_pred_map():
@@ -33,7 +34,7 @@ def load_scores():
 def main():
     import gradio as gr
 
-    docs = load_docs(ROOT / "data" / "test_100", ROOT / "data" / "test_ids.txt", limit=100)
+    docs = load_docs(DATA_DIR, names=file_ids(100))
     by_id = {d["id"]: d for d in docs}
     pred_map = load_pred_map()
     scores = load_scores()
