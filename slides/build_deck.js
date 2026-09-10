@@ -510,8 +510,8 @@ function card(slide, x, y, w, h, fill) {
 {
   const s = pres.addSlide();
   s.background = { color: C.bg };
-  header(s, "10c", "N = 500  ·  EXTRACTIVE", "000001–000500");
-  s.addText("Lead-1 > Lead-3. Oracle-3 ≈ 0,46 — còn câu tốt hơn 3 câu đầu.", {
+  header(s, "10c", "N = 500", "000001–000500");
+  s.addText("ViT5 0,2784 > Lead-1 0,2719. Oracle-3 ≈ 0,46.", {
     x: 0.55, y: 0.95, w: 12.2, h: 0.4,
     fontFace: FONT.serif, fontSize: 20, color: C.ink, margin: 0,
   });
@@ -527,6 +527,12 @@ function card(slide, x, y, w, h, fill) {
     ["Lead-5", "0.2256", "0.1199", "0.1624"],
     ["TextRank-3", "0.2499", "0.1198", "0.1815"],
     [
+      { text: "ViT5", options: { fill: { color: C.cardLight }, bold: true } },
+      { text: "0.2784", options: { fill: { color: C.cardLight }, bold: true } },
+      { text: "0.1474", options: { fill: { color: C.cardLight }, bold: true } },
+      { text: "0.2233", options: { fill: { color: C.cardLight }, bold: true } },
+    ],
+    [
       { text: "Oracle-3", options: { fill: { color: C.cardWarm }, bold: true } },
       { text: "0.4646", options: { fill: { color: C.cardWarm }, bold: true } },
       { text: "0.2793", options: { fill: { color: C.cardWarm }, bold: true } },
@@ -538,7 +544,7 @@ function card(slide, x, y, w, h, fill) {
     colW: [2.2, 1.77, 1.77, 1.76],
     border: { pt: 0.5, color: C.rule },
     fontFace: FONT.sans,
-    fontSize: 15,
+    fontSize: 14,
     color: C.body,
     valign: "middle",
     align: "center",
@@ -548,7 +554,7 @@ function card(slide, x, y, w, h, fill) {
     x: 8.55, y: 1.7, w: 4.0, h: 0.35,
     fontFace: FONT.sans, fontSize: 13, color: C.onDarkMuted, margin: 0,
   });
-  s.addText("Gold gần sapo nên 1 câu đầu đã khớp. Oracle chứng tỏ extractive chưa hết sức — Lead-3 chưa chọn đúng 3 câu. ViT5-500: notebook Kaggle riêng, chưa chạy.", {
+  s.addText("Cùng generate n=100; 100 bài đầu trùng preds.json. Gold gần sapo nên Lead-1 đã cao. ViT5 hơn Lead-1 một chút. Oracle ≈ 0,46: extractive còn cửa, Lead-3 chưa chọn đúng câu.", {
     x: 8.55, y: 2.2, w: 4.0, h: 3.5,
     fontFace: FONT.sans, fontSize: 15, color: C.onDark, margin: 0,
   });
@@ -662,12 +668,12 @@ function card(slide, x, y, w, h, fill) {
   s.background = { color: C.bg };
   header(s, "14", "KẾT LUẬN", "Hạn chế");
   const left = [
-    "Trên 100 bài test đầu Vietnews, ViT5 ROUGE-1/2/L cao hơn Lead-3 và TextRank một chút.",
+    "Trên 100 bài test đầu, ViT5 ROUGE cao hơn Lead-3 và TextRank một chút. n=500: ViT5 0,2784 > Lead-1 0,2719.",
     "Đọc tay 20 bài: ViT5 vẫn sai tên, đảo ý, bịa chi tiết — ROUGE không thay cho đối chiếu gold.",
     "Lead-3 an toàn về chữ (lấy từ bài) nhưng hay lệch sapo.",
   ];
   const right = [
-    "Chỉ 100 bài, không phải full test gốc paper.",
+    "Đọc tay / lệch số trên 100 bài; ROUGE 500 không thay error analysis.",
     "ViT5 đã học Vietnews; không tách được “khả năng mô hình” với “đã thấy miền này”.",
     "Gold dạng bản tin 24h (nhiều tin/bài) cả ba hệ đều yếu.",
     "Chưa đo latency; chưa full test paper.",
