@@ -59,7 +59,7 @@ Extractive trên **500 bài** (`000001`–`000500`, chưa có ViT5-500):
 | TextRank-3 | 0.2499 | 0.1198 | 0.1815 |
 | Oracle-3 | 0.4646 | 0.2793 | 0.3410 |
 
-Lead-1 > Lead-3: gold gần câu mở đầu. Oracle-3 ≈ 0.46: vẫn còn 3 câu trong bài khớp gold hơn Lead-3. ViT5-500: chạy `notebooks/kaggle_abstractive_500.ipynb`, để `results/preds_500.json`, rồi `python src/run_eval_500.py`.
+Lead-1 > Lead-3: gold gần câu mở đầu. Oracle-3 ≈ 0.46: vẫn còn 3 câu trong bài khớp gold hơn Lead-3. ViT5-500: copy `notebooks/kaggle_abstractive_500.ipynb` lên Kaggle (**Internet On**, không cần upload dataset — notebook tự lấy 000001–000500 từ GitHub), tải `preds_500.json` về `results/`, rồi `python src/run_eval_500.py`.
 
 ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhóm):
 
@@ -73,11 +73,15 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 
 ## Abstractive (Kaggle)
 
+n=100 (đã khóa):
+
 1. Tạo notebook Kaggle, bật **GPU T4 x2**, **Internet On**, notebook Private.
 2. Copy nội dung `notebooks/kaggle_abstractive.ipynb`.
 3. Model: `VietAI/vit5-base-vietnews-summarization` (không dùng `vit5-base`).
 4. Generate theo model card: thêm `</s>`, `max_length=256`, `early_stopping=True`.
 5. Tải `preds.json` về `results/`.
+
+n=500: copy `notebooks/kaggle_abstractive_500.ipynb`. **Không upload `data/test_500`.** Cùng GPU + Internet On; notebook tự lấy file từ [ThanhChinhBK/vietnews](https://github.com/ThanhChinhBK/vietnews) (`data/test_tokenized`, `000001`–`000500`). Tải `preds_500.json` về `results/`, chạy `python src/run_eval_500.py`. Session bị kill thì chạy lại cell infer — file `/kaggle/working/preds_500.json` resume được.
 
 Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 
