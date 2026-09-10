@@ -1,6 +1,6 @@
 # Phân tích lỗi (đọc tay, n=20)
 
-Nguồn: `data/test_100` + `results/preds.json` + Lead-3/TextRank local.  
+Nguồn: `data/test_tokenized` (000001–000100) + `results/preds.json` + Lead-3/TextRank local.  
 Chỉ ghi lệch so với **gold** hoặc sai sự thật so với thân bài khi đọc được.
 
 ---

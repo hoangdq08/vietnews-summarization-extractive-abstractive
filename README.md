@@ -10,37 +10,31 @@ Câu hỏi: trên cùng tập test, ba hệ khác nhau thế nào về ROUGE, v�
 
 ## Dữ liệu
 
-- Nguồn: https://github.com/ThanhChinhBK/vietnews
-- Split: `data/test_tokenized`
-- L1: 100 file đầu (`000001.txt.seg` … `000100.txt.seg`) — danh sách `data/test_ids.txt`
-- File đã **tách từ sẵn** (dấu `_`). Không gọi lại underthesea trên tập này.
-- Kaggle tự kéo file (không upload). Local đã có `data/test_100` / `data/test_500`; nếu thiếu: `python src/fetch_vietnews.py --n 500`.
+- Nguồn: https://github.com/ThanhChinhBK/vietnews — `data/test_tokenized`
+- Local: `python src/fetch_vietnews.py --n 500` → `data/test_tokenized/` (không commit file `.seg`)
+- Kaggle: notebook tự tải, **không upload dataset**
+- 100 file đầu = bảng khóa; 500 file đầu = bảng mở rộng. Cùng thứ tự tên `000001.txt.seg` …
+- File đã **tách từ sẵn** (dấu `_`). Không gọi lại underthesea.
 
 ## Cài đặt
 
 ```bash
-cd do-an-tom-tat
+cd vietnews-summarization-extractive-abstractive
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python src/fetch_vietnews.py --n 500
 ```
 
-## Chạy extractive (máy local)
+## Chấm ROUGE (máy local)
 
 ```bash
-python src/run_extractive.py --limit 10
-python src/run_extractive.py --limit 100
+python src/run_eval.py --limit 100
+python src/run_eval.py --limit 500
+python src/scores_by_length.py
 ```
 
-Kết quả: `results/extractive_preview.json`, `results/extractive_scores.csv`
-
-## Ghép ROUGE 3 hệ
-
-Cần `results/preds.json` (output Kaggle).
-
-```bash
-python src/merge_scores.py
-```
+Cần `results/preds.json` (n=100) và `results/preds_500.json` (n=500) từ Kaggle.
 
 Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 
@@ -50,7 +44,7 @@ Bảng F1 trên 100 bài (thay `_` → space trước khi tính):
 | TextRank | 0.2428 | 0.1100 | 0.1730 |
 | ViT5 | 0.2664 | 0.1341 | 0.2084 |
 
-Cùng split, **500 bài** (`000001`–`000500`). Bảng n=100 ở trên **không đổi**. 100 pred đầu của `preds_500.json` trùng `preds.json`.
+Cùng split, **500 bài** (`000001`–`000500`). Bảng n=100 **không đổi**. 100 pred đầu của `preds_500.json` trùng `preds.json`.
 
 | Hệ | ROUGE-1 | ROUGE-2 | ROUGE-L |
 |---|---|---|---|
@@ -71,32 +65,32 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 | Trung (300–499) | 33 | 0.2638 | 0.2409 | 0.2549 |
 | Dài (≥500) | 33 | 0.2298 | 0.2194 | 0.2519 |
 
-Đối chiếu số ViT5 vs gold (n=100, đọc tay): script `src/check_numbers.py` ra 64/100 bài lệch token số — **không dùng làm tỷ lệ lỗi**. Sau khi lọc ngày/tuổi/`hai` vs `2` và số lấy từ thân bài: **7 bài sai/ảo giác số**, **13 bài sót số then chốt** (án, tiền, số nạn nhân). Chi tiết `results/number_diff_verified.md`.
+Đối chiếu số ViT5 vs gold (n=100, đọc tay): script `src/check_numbers.py` ra 64/100 bài lệch token số — **không dùng làm tỷ lệ lỗi**. Sau khi lọc: **7 bài sai/ảo giác số**, **13 bài sót số then chốt**. Chi tiết `results/number_diff_verified.md`.
 
 ## Abstractive (Kaggle) — không upload data
 
-ViT5 **chỉ chạy trên Kaggle**. Không Add Dataset, không zip `test_100`/`test_500`.
+ViT5 **chỉ chạy trên Kaggle**. Không Add Dataset.
 
 1. New notebook, **GPU T4 x2**, **Internet On**, Private.
-2. Copy `notebooks/kaggle_abstractive.ipynb` (cùng nội dung `kaggle_abstractive_500.ipynb`).
-3. Cell 1 (pip `transformers==4.44.2`) → **Restart session** → chạy tiếp. **Đừng Run All.**
-4. Cell `N = 500` (đổi `100` nếu cần bản khóa). Notebook tự tải file từ GitHub `ThanhChinhBK/vietnews`.
+2. Copy `notebooks/kaggle_abstractive.ipynb` (trùng `kaggle_abstractive_500.ipynb`).
+3. Cell pip `transformers==4.44.2` → **Restart session** → chạy tiếp. **Đừng Run All.**
+4. `N = 500` (đổi `100` nếu cần bản khóa). Tự tải file từ GitHub `ThanhChinhBK/vietnews`.
 5. Model: `VietAI/vit5-base-vietnews-summarization`. Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`.
 6. Tải `/kaggle/working/preds_500.json` (hoặc `preds.json` nếu N=100) về `results/`.
 
-Đã có `results/preds_500.json`. Chấm lại local: `python src/run_eval_500.py`. Session bị kill: chạy lại cell infer — resume từ file trên `/kaggle/working`.
+Đã có pred. Chấm lại: `python src/run_eval.py --limit 500`. Session bị kill: chạy lại cell infer (resume).
 
 Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 
 ## Demo
 
-Local:
+Cần đã `fetch_vietnews --n 100` (hoặc 500). Demo **không** gọi GitHub lúc mở.
 
 ```bash
 python app/demo.py
 ```
 
-Docker (cùng giao diện, cổng 7860):
+Docker (build máy có mạng — image tự kéo 100 bài):
 
 ```bash
 docker build -t vietnews-demo .
