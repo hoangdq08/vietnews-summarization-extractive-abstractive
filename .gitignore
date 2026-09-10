@@ -8,7 +8,5 @@ venv/
 slides/node_modules/
 # corpus: kéo bằng src/fetch_vietnews.py, không commit .seg
 data/**/*.txt.seg
-data/test_100/
-data/test_500/
 data/test_tokenized/
 /tmp/
