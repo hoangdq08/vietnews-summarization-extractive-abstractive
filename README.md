@@ -14,6 +14,7 @@ Câu hỏi: trên cùng tập test, ba hệ khác nhau thế nào về ROUGE, v�
 - Split: `data/test_tokenized`
 - L1: 100 file đầu (`000001.txt.seg` … `000100.txt.seg`) — danh sách `data/test_ids.txt`
 - File đã **tách từ sẵn** (dấu `_`). Không gọi lại underthesea trên tập này.
+- Kaggle tự kéo file (không upload). Local đã có `data/test_100` / `data/test_500`; nếu thiếu: `python src/fetch_vietnews.py --n 500`.
 
 ## Cài đặt
 
@@ -72,17 +73,18 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 
 Đối chiếu số ViT5 vs gold (n=100, đọc tay): script `src/check_numbers.py` ra 64/100 bài lệch token số — **không dùng làm tỷ lệ lỗi**. Sau khi lọc ngày/tuổi/`hai` vs `2` và số lấy từ thân bài: **7 bài sai/ảo giác số**, **13 bài sót số then chốt** (án, tiền, số nạn nhân). Chi tiết `results/number_diff_verified.md`.
 
-## Abstractive (Kaggle)
+## Abstractive (Kaggle) — không upload data
 
-n=100 (đã khóa):
+ViT5 **chỉ chạy trên Kaggle**. Không Add Dataset, không zip `test_100`/`test_500`.
 
-1. Tạo notebook Kaggle, bật **GPU T4 x2**, **Internet On**, notebook Private.
-2. Copy nội dung `notebooks/kaggle_abstractive.ipynb`.
-3. Model: `VietAI/vit5-base-vietnews-summarization` (không dùng `vit5-base`).
-4. Generate theo model card: thêm `</s>`, `max_length=256`, `early_stopping=True`.
-5. Tải `preds.json` về `results/`.
+1. New notebook, **GPU T4 x2**, **Internet On**, Private.
+2. Copy `notebooks/kaggle_abstractive.ipynb` (cùng nội dung `kaggle_abstractive_500.ipynb`).
+3. Cell 1 (pip `transformers==4.44.2`) → **Restart session** → chạy tiếp. **Đừng Run All.**
+4. Cell `N = 500` (đổi `100` nếu cần bản khóa). Notebook tự tải file từ GitHub `ThanhChinhBK/vietnews`.
+5. Model: `VietAI/vit5-base-vietnews-summarization`. Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`.
+6. Tải `/kaggle/working/preds_500.json` (hoặc `preds.json` nếu N=100) về `results/`.
 
-n=500 (đã có `results/preds_500.json`): cùng generate n=100. Notebook `kaggle_abstractive_500.ipynb` **không upload dataset** — Internet On, tự lấy `000001`–`000500` từ GitHub. Chấm lại: `python src/run_eval_500.py`.
+Đã có `results/preds_500.json`. Chấm lại local: `python src/run_eval_500.py`. Session bị kill: chạy lại cell infer — resume từ file trên `/kaggle/working`.
 
 Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 

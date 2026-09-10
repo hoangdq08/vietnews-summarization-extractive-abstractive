@@ -1,6 +1,8 @@
 Nguồn: https://github.com/ThanhChinhBK/vietnews
 Split dùng: data/test_tokenized
-Cách lấy: 100 file đầu theo tên (000001.txt.seg … 000100.txt.seg)
+Kaggle: notebooks/kaggle_abstractive.ipynb tự tải 000001…000{N}.txt.seg (không upload dataset).
+Local (tuỳ chọn): python src/fetch_vietnews.py --n 500
+Cách lấy: N file đầu theo tên (000001.txt.seg …)
 Định dạng mỗi file (tách bằng dòng trống):
   1) tiêu đề
   2) tóm tắt mẫu (abstract)
