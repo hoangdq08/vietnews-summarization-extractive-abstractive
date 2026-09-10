@@ -1,49 +1,38 @@
-"""Kéo file test Vietnews từ GitHub. Không upload dataset, không clone train.
-
-Chỉ lấy 000001.txt.seg … 000{N}.txt.seg trong data/test_tokenized.
-Nguồn: https://github.com/ThanhChinhBK/vietnews
-"""
+"""Kéo 000001.txt.seg … 000{N}.txt.seg từ GitHub. Không clone train."""
 
 from __future__ import annotations
 
+import argparse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+from paths import DATA_DIR, file_ids
+
 RAW_BASE = (
     "https://raw.githubusercontent.com/ThanhChinhBK/vietnews/"
     "master/data/test_tokenized"
 )
-DEFAULT_DEST = ROOT / "data" / "test_tokenized"
 
 
-def file_ids(n: int) -> list[str]:
-    if n < 1:
-        raise ValueError("n >= 1")
-    return [f"{i:06d}.txt.seg" for i in range(1, n + 1)]
+def _empty(path: Path) -> bool:
+    return not path.exists() or path.stat().st_size == 0
 
 
-def _download_one(name: str, dest: Path) -> str:
+def _download_one(name: str, dest: Path) -> None:
     out = dest / name
-    if out.exists() and out.stat().st_size > 0:
-        return name
-    url = f"{RAW_BASE}/{name}"
+    if not _empty(out):
+        return
     tmp = out.with_suffix(out.suffix + ".part")
-    urllib.request.urlretrieve(url, tmp)
+    urllib.request.urlretrieve(f"{RAW_BASE}/{name}", tmp)
     tmp.replace(out)
-    return name
 
 
 def fetch_vietnews(dest: Path | None = None, n: int = 500, workers: int = 8) -> list[Path]:
-    dest = Path(dest) if dest is not None else DEFAULT_DEST
+    dest = Path(dest) if dest is not None else DATA_DIR
     dest.mkdir(parents=True, exist_ok=True)
     names = file_ids(n)
-    pending = [
-        name
-        for name in names
-        if not (dest / name).exists() or (dest / name).stat().st_size == 0
-    ]
+    pending = [name for name in names if _empty(dest / name)]
     if pending:
         print(f"tải {len(pending)}/{n} file → {dest}")
         with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -54,25 +43,19 @@ def fetch_vietnews(dest: Path | None = None, n: int = 500, workers: int = 8) -> 
                 done += 1
                 if done % 50 == 0 or done == len(pending):
                     print("downloaded", done, "/", len(pending))
-    missing = [
-        name
-        for name in names
-        if not (dest / name).exists() or (dest / name).stat().st_size == 0
-    ]
+    missing = [name for name in names if _empty(dest / name)]
     if missing:
         raise RuntimeError(f"thiếu {len(missing)} file, ví dụ {missing[:3]}")
     files = [dest / name for name in names]
-    assert files[0].name == "000001.txt.seg"
-    print("n files", len(files), "dir", dest)
+    if pending:
+        print("n files", len(files), "dir", dest)
     return files
 
 
 def main() -> None:
-    import argparse
-
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, default=500)
-    ap.add_argument("--dest", default=str(DEFAULT_DEST))
+    ap.add_argument("--dest", default=str(DATA_DIR))
     args = ap.parse_args()
     fetch_vietnews(Path(args.dest), n=args.n)
 

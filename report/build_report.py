@@ -187,7 +187,7 @@ def story():
         P(
             "Nguồn: https://github.com/ThanhChinhBK/vietnews, thư mục data/test_tokenized. "
             "Mỗi file: tiêu đề, abstract, thân bài. Nhóm lấy 100 file đầu theo tên "
-            "(000001.txt.seg … 000100.txt.seg), danh sách trong data/test_ids.txt. "
+            "(000001.txt.seg … 000100.txt.seg). "
             "Không tự xáo train/test. Không gọi lại underthesea trên gold — corpus đã tách từ.",
             S["body"],
         ),

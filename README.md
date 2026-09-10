@@ -72,13 +72,13 @@ ROUGE-1 theo độ dài thân bài (n=100, ngưỡng 300/500 từ, ~33 bài/nhó
 ViT5 **chỉ chạy trên Kaggle**. Không Add Dataset.
 
 1. New notebook, **GPU T4 x2**, **Internet On**, Private.
-2. Copy `notebooks/kaggle_abstractive.ipynb` (trùng `kaggle_abstractive_500.ipynb`).
+2. Copy `notebooks/kaggle_abstractive.ipynb`.
 3. Cell pip `transformers==4.44.2` → **Restart session** → chạy tiếp. **Đừng Run All.**
 4. `N = 500` (đổi `100` nếu cần bản khóa). Tự tải file từ GitHub `ThanhChinhBK/vietnews`.
 5. Model: `VietAI/vit5-base-vietnews-summarization`. Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`.
 6. Tải `/kaggle/working/preds_500.json` (hoặc `preds.json` nếu N=100) về `results/`.
 
-Đã có pred. Chấm lại: `python src/run_eval.py --limit 500`. Session bị kill: chạy lại cell infer (resume).
+Đã có pred. Chấm lại: `python src/run_eval.py --limit 500`. Session bị kill: chạy lại cell infer (resume). Một notebook: đổi `N = 100` hoặc `500`.
 
 Nhóm **không fine-tune** ViT5. Checkpoint VietAI đã học Vietnews.
 

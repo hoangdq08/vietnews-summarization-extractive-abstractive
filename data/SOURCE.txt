@@ -2,8 +2,7 @@ Nguồn: https://github.com/ThanhChinhBK/vietnews
 Split: data/test_tokenized
 Kaggle: notebooks/kaggle_abstractive.ipynb tự tải 000001…000{N}.txt.seg (không upload dataset).
 Local: python src/fetch_vietnews.py --n 500
-  → data/test_tokenized/000001.txt.seg … 000500.txt.seg
 Không commit file .seg. Không clone train.
 Mỗi file (tách bằng dòng trống): tiêu đề / abstract / thân bài.
 Đã tách từ (dấu _). Không gọi lại underthesea.
-n=100 = 000001–000100 (bảng khóa). n=500 = 000001–000500.
+n=100 = 000001–000100 (bảng khóa). n=500 = 000001–000500. Id sinh từ src/paths.py file_ids().
