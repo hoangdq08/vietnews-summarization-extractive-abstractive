@@ -342,9 +342,9 @@ def story():
         ),
         P("8. Demo", S["h1"]),
         P(
-            "Ứng dụng Gradio ba cột (Lead-3 | TextRank | ViT5) trên 100 bài, kèm ROUGE từng bài. "
-            "ViT5 lấy từ results/preds.json, không gọi GPU lúc demo. "
-            "Chạy local: python app/demo.py. Chạy Docker: docker run --rm -p 7860:7860 vietnews-demo. "
+            "Ứng dụng Gradio ba cột (Lead-3 | TextRank | ViT5) trên 500 bài đầu, kèm ROUGE từng bài. "
+            "ViT5 lấy từ results/preds_500.json, không gọi GPU lúc demo. "
+            "Chạy demo: docker run --rm -p 7860:7860 vietnews-demo. "
             "Địa chỉ: http://127.0.0.1:7860.",
             S["body"],
         ),
@@ -371,7 +371,7 @@ def story():
         ),
         P(
             "Phụ lục: results/scores.csv, scores_500.csv, preds.json, preds_500.json, error_analysis.md. "
-            "Slide: slides/CS221-Vietnews-tom-tat.pptx.",
+            "Slide: slides/CS221-Vietnews-bao-ve.pptx.",
             S["caption"],
         ),
     ]
