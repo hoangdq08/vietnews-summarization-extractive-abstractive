@@ -12,21 +12,31 @@ from paths import RESULTS
 from preprocess import load_docs
 
 
-def load_ab():
-    """Optional offline artifact. Missing data must not break the baseline demo."""
-    path = RESULTS / "vit5_input_ab_confirm100" / "predictions.json"
+def read_pairs(path):
+    """Return complete original/spaces pairs, or None while a run is still writing."""
     if not path.exists():
-        return {}, "Chưa có artifact A/B xác nhận 100 bài. Baseline vẫn hoạt động."
+        return None
     rows = json.loads(path.read_text(encoding="utf-8"))
     pairs = {}
     for row in rows:
         variants = pairs.setdefault(row["id"], {})
         if row["variant"] in variants:
-            raise ValueError("Duplicate A/B record: " + row["id"])
+            return None
         variants[row["variant"]] = row
     if any(set(v) != {"original", "spaces"} for v in pairs.values()):
-        raise ValueError("Incomplete A/B pairs")
-    return pairs, "A/B sinh sẵn, không inference trực tiếp. ROUGE cao không đảm bảo đúng sự thật."
+        return None
+    return pairs
+
+
+def load_ab():
+    """Optional offline artifact. Missing data must not break the baseline demo."""
+    full = read_pairs(RESULTS / "vit5_input_ab_500" / "predictions.json")
+    if full and len(full) == 500:
+        return full, "A/B đủ 500 bài 000001–000500, sinh sẵn, không inference lúc mở demo. ROUGE cao không đảm bảo đúng sự thật."
+    pairs = read_pairs(RESULTS / "vit5_input_ab_confirm100" / "predictions.json")
+    if not pairs:
+        return {}, "Chưa có artifact A/B. Baseline vẫn hoạt động."
+    return pairs, "A/B sinh sẵn trên 100 bài cách quãng, không inference trực tiếp. ROUGE cao không đảm bảo đúng sự thật."
 
 
 def main():
@@ -91,10 +101,10 @@ def main():
             vit5_box = gr.Textbox(label="ViT5", lines=12)
         picker.change(run, inputs=picker, outputs=[title, gold, lead_box, tr_box, vit5_box])
         demo.load(run, inputs=picker, outputs=[title, gold, lead_box, tr_box, vit5_box])
-        with gr.Accordion("Thí nghiệm A/B ViT5: 100 bài xác nhận riêng", open=False):
+        with gr.Accordion(f"Thí nghiệm A/B ViT5: {len(ab_pairs)} bài", open=False):
             gr.Markdown(ab_notice)
             if ab_pairs:
-                ab_picker = gr.Dropdown(sorted(ab_pairs), value=sorted(ab_pairs)[0], label="ID A/B (tập riêng, có giao với baseline)")
+                ab_picker = gr.Dropdown(sorted(ab_pairs), value=sorted(ab_pairs)[0], label="ID A/B")
                 ab_button = gr.Button("Xem đối chiếu A/B")
                 ab_title = gr.Textbox(label="Tiêu đề A/B", interactive=False)
                 ab_body = gr.Textbox(label="Bài gốc để kiểm chứng (hiển thị đã bỏ _)", lines=12, interactive=False)

@@ -1,8 +1,9 @@
-"""Controlled ViT5 input A/B. Run --limit 1 first, then --limit 20.
+"""Controlled ViT5 input A/B.
 
-Uses 20 fixed, evenly spaced IDs from the existing first 500 test articles.
-Exploratory test-set analysis, not a validation set for tuning parameters.
-Writes only to a new explicitly supplied output directory. No baseline overwrite.
+--limit 1 or 20: evenly spaced exploratory IDs.
+--limit 100: confirmation IDs 000002, 000007, ..., 000497.
+--limit 500: every article 000001–000500, in filename order.
+Writes only to a new output directory. Does not overwrite baseline predictions.
 """
 import argparse
 import hashlib
@@ -20,7 +21,7 @@ from evaluate import normalize, rouge_one
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, choices=[1, 20, 100], required=True)
+    ap.add_argument("--limit", type=int, choices=[1, 20, 100, 500], required=True)
     ap.add_argument("--output", type=Path, required=True)
     args = ap.parse_args()
     if args.output.exists():
@@ -37,8 +38,15 @@ def main():
     model_id = "VietAI/vit5-base-vietnews-summarization"
     revision = "a54febd011c0a39ce49ceacd9225e63ef3a73ad3"
     docs = load_docs(500)
-    selected = ([docs[i] for i in range(1, 500, 5)] if args.limit == 100
-                else [docs[i] for i in range(0, 500, 25)][:args.limit])
+    if args.limit == 500:
+        selected = docs
+        selection = "IDs 000001-000500 in filename order"
+    elif args.limit == 100:
+        selected = [docs[i] for i in range(1, 500, 5)]
+        selection = "IDs 2,7,...,497 disjoint confirmation"
+    else:
+        selected = [docs[i] for i in range(0, 500, 25)][:args.limit]
+        selection = "IDs 1,26,...,476 exploratory"
     args.output.mkdir(parents=True)
     print("JCODE_PROGRESS " + json.dumps({"message": "Loading pinned checkpoint " + revision}), flush=True)
     tok = T5Tokenizer.from_pretrained(model_id, revision=revision)
@@ -52,7 +60,7 @@ def main():
         "generation_overrides": generation, "generation_defaults": model.generation_config.to_dict(),
         "input_max_tokens": 1024, "tokenizer_class": type(tok).__name__,
         "tokenizer_legacy": getattr(tok, "legacy", None),
-        "selection": "IDs 2,7,...,497 disjoint confirmation" if args.limit == 100 else "IDs 1,26,...,476 exploratory",
+        "selection": selection,
         "review_ids": [d["id"] for d in selected[::5]] if args.limit == 100 else [],
         "ids": [d["id"] for d in selected],
         "metric": "project normalize(_ -> space) + WhitespaceTokenizer ROUGE F1",

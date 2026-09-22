@@ -13,6 +13,7 @@ COPY app/ app/
 COPY results/preds_500.json results/preds_500.json
 COPY results/scores_500.csv results/scores_500.csv
 COPY results/vit5_input_ab_confirm100/predictions.json results/vit5_input_ab_confirm100/predictions.json
+COPY results/vit5_input_ab_500/predictions.json results/vit5_input_ab_500/predictions.json
 
 EXPOSE 7860
 CMD ["python", "app/demo.py"]

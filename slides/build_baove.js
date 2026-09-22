@@ -85,8 +85,17 @@ function darkHead(text) {
     fontFace: FONT.sans, fontSize: 16, color: C.ink, margin: 0,
   });
   s.addText("Nguyễn Trí Toàn    26410135\nNguyễn Văn Thái    26410108\nĐỗ Quốc Hoàng    26410043", {
-    x: 0.7, y: 4.7, w: 11, h: 1.25,
+    x: 0.7, y: 4.55, w: 7.2, h: 1.15,
     fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0,
+  });
+  card(s, 8.15, 4.35, 4.5, 1.55);
+  s.addText("GIÁO VIÊN HƯỚNG DẪN", {
+    x: 8.35, y: 4.52, w: 4.1, h: 0.32,
+    fontFace: FONT.sans, fontSize: 12, color: C.accent, margin: 0, charSpacing: 0.8,
+  });
+  s.addText("TS. Đặng Văn Thìn", {
+    x: 8.35, y: 5.0, w: 4.1, h: 0.5,
+    fontFace: FONT.serif, fontSize: 20, color: C.ink, margin: 0,
   });
   s.addNotes("Em chào thầy và các bạn. Nhóm em làm đề tài so sánh tóm tắt rút trích và tóm lược trên tin tiếng Việt. Rút trích là lấy câu có sẵn trong bài. Tóm lược thì nhóm dùng checkpoint ViT5 đã có sẵn, không train thêm. Nhóm muốn xem trên cùng tập test, ba cách này điểm ROUGE khác nhau thế nào, và mở bài ra thì mỗi cách sai ra sao.");
 }
@@ -505,7 +514,7 @@ function darkHead(text) {
     });
   });
   footer(s, 15);
-  s.addNotes("Demo để ba bản cạnh nhau, cùng một bài. Lead-3 là ba câu đầu. TextRank là ba câu được chọn trong thân bài. ViT5 là câu viết mới, lấy từ kết quả đã lưu. Khi đứng máy: docker run --rm -p 7860:7860 vietnews-demo, mở 127.0.0.1 cổng 7860, chọn một bài, đọc thân bài, rồi chỉ một chỗ ViT5 khác bài. Không đọc các bước này thành lời. Máy bảo vệ không cần cài Python.");
+  s.addNotes("Đọc khoảng 20 giây rồi chuyển máy. Ba cột này là cùng một bài. Lead-3 lấy ba câu đầu. TextRank chọn ba câu trong thân bài. ViT5 viết câu mới, lấy từ file đã lưu, không chạy model lúc này. Em mở demo. Mở 127.0.0.1 cổng 7860, không gõ Docker. Ô Bài test gõ 000011. Nói: bài thuê xe chở máy ủi. Sapo ở ô tóm tắt mẫu. Lead-3 và TextRank vẫn nói máy ủi vì lấy câu trong bài. ViT5 viết trộm xe bồn, trong bài không có xe bồn. Nếu còn giờ, mở mục Thí nghiệm A/B ViT5 500 bài, chọn 000011, bấm Xem đối chiếu A/B. A giữ gạch dưới, B đổi thành khoảng trắng, cả hai sinh sẵn. ROUGE của B có thể cao hơn, không kết luận B đúng hơn. Rồi về slide 16.");
 }
 
 // 16 Kết luận
