@@ -7,11 +7,12 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && pip install --no-cache-dir "fastapi==0.115.6" "starlette==0.41.3"
 
 COPY src/ src/
-COPY app/ app/
-RUN python src/fetch_vietnews.py --n 100
+RUN python src/fetch_vietnews.py --n 500
 
-COPY results/preds.json results/preds.json
-COPY results/scores.csv results/scores.csv
+COPY app/ app/
+COPY results/preds_500.json results/preds_500.json
+COPY results/scores_500.csv results/scores_500.csv
+COPY results/vit5_input_ab_confirm100/predictions.json results/vit5_input_ab_confirm100/predictions.json
 
 EXPOSE 7860
 CMD ["python", "app/demo.py"]

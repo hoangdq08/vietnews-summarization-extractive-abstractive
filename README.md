@@ -8,24 +8,18 @@ Dữ liệu: [Vietnews](https://github.com/ThanhChinhBK/vietnews) `test_tokenize
 
 ## Quick start
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python src/fetch_vietnews.py --n 500
-python app/demo.py
-```
-
-Mở http://127.0.0.1:7860
-
-Corpus **không** nằm trong git. `fetch_vietnews.py` tải `000001.txt.seg` … `000{N}.txt.seg` từ GitHub vào `data/test_tokenized/`. Demo đọc disk, không gọi mạng lúc mở.
+Demo chạy trong Docker, không cần cài Python trên máy.
 
 ```bash
 docker build -t vietnews-demo .
 docker run --rm -p 7860:7860 vietnews-demo
 ```
 
-Build Docker cần Internet (image tự fetch 100 bài).
+Mở http://127.0.0.1:7860
+
+Lúc build, image tự tải 500 file test. Cần Internet một lần. Lúc mở demo, container đọc file đã nằm trong image, không gọi mạng.
+
+Nếu sửa code trên máy, dùng `.venv` rồi `python app/demo.py`. Cách đó không dùng khi bảo vệ.
 
 ## Pipeline
 
@@ -33,9 +27,9 @@ Build Docker cần Internet (image tự fetch 100 bài).
 |---|---|---|
 | Lấy test set | local / Kaggle | `python src/fetch_vietnews.py --n 500` |
 | Extractive | local CPU | Lead-n, TextRank trong `src/extractive.py` |
-| Abstractive | Kaggle GPU | `notebooks/kaggle_abstractive.ipynb` → `results/preds.json` |
+| Abstractive | Kaggle GPU | `notebooks/kaggle_abstractive.ipynb` → `results/preds_500.json` |
 | ROUGE | local | `python src/run_eval.py --limit 100` hoặc `--limit 500` |
-| Demo | local / Docker | `python app/demo.py` |
+| Demo | Docker | `docker run --rm -p 7860:7860 vietnews-demo` |
 
 ViT5 cần GPU. Notebook Kaggle: **T4 x2**, **Internet On**, không Add Dataset. Cell 1 cài `transformers==4.44.2` → **Restart session** → chạy tiếp (`N = 500`). Generate: `</s>`, `max_length=256`, `early_stopping=True`, `cuda:0`. Tải `/kaggle/working/preds_500.json` về `results/`. Session bị kill thì chạy lại cell infer (resume).
 
@@ -84,7 +78,7 @@ ROUGE không thay cho đọc tay. Trên 100 bài, ViT5 có **7** trường hợp
 
 ```
 src/           fetch, preprocess, extractive, oracle, ROUGE, eval
-app/demo.py    Gradio, 100 bài, ViT5 từ preds.json
+app/demo.py    Gradio, 500 bài, ViT5 từ preds_500.json
 notebooks/     inference ViT5 trên Kaggle
 data/          SOURCE.txt; test_tokenized/ do fetch (gitignored)
 results/       preds, scores, error analysis

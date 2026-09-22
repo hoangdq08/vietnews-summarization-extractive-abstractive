@@ -1,0 +1,34 @@
+[
+  {
+    "id": "000001.txt.seg",
+    "variant": "original",
+    "title": "Bản_án cho đối_tượng giả_danh công_an để lừa_đảo",
+    "abstract": "Ngày 25/2 , TAND TP. Đà_Nẵng tuyên_phạt Hồ_Xuân_Huy ( SN 1994 ) , ngụ quận Hải_Châu , 12 năm tù về tội Lừa_đảo chiếm_đoạt tài_sản .",
+    "pred": "Để có tiền sử_dụng cá nhân, sĩ quan công an Bùi Quang Huy ( tức Vũ \" nhôm \" ) đã lừa và chiếm đoạt 3,2 tỷ đồng của nhiều người.",
+    "input_sha256": "94771aae0891549f2c0de04357fd8196a6e723450d7ec5d1b83fd83cbc57fb94",
+    "full_input_tokens": 415,
+    "used_input_tokens": 415,
+    "truncated": false,
+    "output_tokens": 40,
+    "seconds": 1.4511577500000001,
+    "rouge1": 0.15151515151515152,
+    "rouge2": 0.0625,
+    "rougeL": 0.15151515151515152
+  },
+  {
+    "id": "000001.txt.seg",
+    "variant": "spaces",
+    "title": "Bản_án cho đối_tượng giả_danh công_an để lừa_đảo",
+    "abstract": "Ngày 25/2 , TAND TP. Đà_Nẵng tuyên_phạt Hồ_Xuân_Huy ( SN 1994 ) , ngụ quận Hải_Châu , 12 năm tù về tội Lừa_đảo chiếm_đoạt tài_sản .",
+    "pred": "Ngày 4/4, TAND TP. Đà Nẵng mở phiên toà sơ thẩm, tuyên phạt Phan Phú Huy ( tức Huy  nổ  ), 40 tuổi, ngụ quận Hải Châu, chung thân về tội Lừa đảo chiếm đoạt tài sản.",
+    "input_sha256": "26e25193551c5ded120cb3f9a3743f778f79c6be15741d7bacf9f517e63c17a2",
+    "full_input_tokens": 326,
+    "used_input_tokens": 326,
+    "truncated": false,
+    "output_tokens": 53,
+    "seconds": 0.651053625000003,
+    "rouge1": 0.5352112676056339,
+    "rouge2": 0.37681159420289856,
+    "rougeL": 0.5352112676056339
+  }
+]

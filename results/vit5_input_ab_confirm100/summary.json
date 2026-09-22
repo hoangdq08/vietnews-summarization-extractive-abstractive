@@ -1,0 +1,20 @@
+{
+  "original": {
+    "rouge1": 0.30067299259017305,
+    "rouge2": 0.1707899390934369,
+    "rougeL": 0.24664370397470783,
+    "seconds": 0.7878328028400001,
+    "full_input_tokens": 836.4,
+    "truncated_articles": 28,
+    "n": 100
+  },
+  "spaces": {
+    "rouge1": 0.3242641836409954,
+    "rouge2": 0.1983211614777878,
+    "rougeL": 0.2718768825543806,
+    "seconds": 0.6375345346400008,
+    "full_input_tokens": 599.26,
+    "truncated_articles": 7,
+    "n": 100
+  }
+}
