@@ -140,7 +140,7 @@ def story():
         Spacer(1, 18),
         P("So sánh tóm tắt rút trích và tóm lược<br/>trên tin tức tiếng Việt", S["cover_title"]),
         P("A comparative study of extractive and abstractive summarization on Vietnews", S["cover_sub"]),
-        P("Lead-3 · TextRank · ViT5 (checkpoint VietAI, không fine-tune)<br/>ROUGE n=100 và n=500 · đọc tay 20 bài", S["cover_sub"]),
+        P("Lead-3 · TextRank · ViT5 (checkpoint VietAI, không fine-tune)<br/>ROUGE n=100 và n=500 · đọc tay 100 bài", S["cover_sub"]),
         Spacer(1, 24),
         P("Nhóm 14", S["cover_kicker"]),
         P(
@@ -162,7 +162,7 @@ def story():
             "Nhóm không fine-tune ViT5. Độ đo là ROUGE-1/2/L (F1) sau khi thay dấu gạch dưới "
             "bằng khoảng trắng trên cả bản tóm tắt và gold. ViT5 đạt ROUGE cao hơn một chút "
             "(R-1 = 0,2664) so với Lead-3 (0,2507) và TextRank (0,2428). Trên 500 bài, ViT5 R-1 = 0,2784 "
-            "(Lead-1 = 0,2719). Đọc tay 20 bài: ViT5 vẫn sai tên, đảo polarity, bịa chi tiết; Lead-3 ít bịa nhưng hay lệch gold.",
+            "(Lead-1 = 0,2719). Đọc tay 100 bài: ViT5 sai hoặc gán nhầm sự kiện so với thân bài ở 24 bài; Lead-3 ít bịa nhưng hay lệch gold.",
             S["body"],
         ),
         P("2. Đặt vấn đề", S["h1"]),
@@ -290,10 +290,11 @@ def story():
         ]),
         Spacer(1, 4),
         KeepTogether([
-        P("7. Phân tích lỗi (20 bài đọc tay)", S["h1"]),
+        P("7. Phân tích lỗi (100 bài đọc tay)", S["h1"]),
         P(
-            "Đối chiếu gold với ba hệ trên 20 id rải trong test-100 "
-            "(gồm 000001–000003 và các id cách đều). Chi tiết: results/error_analysis.md.",
+            "Đối chiếu gold, thân bài và ba hệ trên đủ 100 bài 000001–000100. "
+            "ViT5 sai hoặc gán nhầm sự kiện so với thân bài ở 24 bài. "
+            "Một lượt đọc, không phải hai người chấm. Chi tiết: results/error_analysis.md.",
             S["body"],
         ),
         P("Bảng 2. Ba ví dụ ViT5 sai sự thật dù ROUGE có thể không thấp.", S["caption"]),
@@ -329,7 +330,7 @@ def story():
         Spacer(1, 8),
         P(
             "Ngoài ra: 000003 ViT5 đảo polarity (“dung dịch chất lượng tốt” trong bài điều tra quảng cáo); "
-            "000031 bịa dao/súng khi gold là đốt xe; 000051 Lead-3 gần như không nêu vụ nổ micro; "
+            "000015 ViT5 đảo người đâm; 000051 Lead-3 gần như không nêu vụ nổ micro; "
             "000066 (bản tin 24h, nhiều tin/bài) cả ba hệ đều cắt, lặp hoặc trộn tin. "
             "Lead-3 ít bịa vì lấy câu sẵn có, nhưng hay lệch gold khi gold là kết luận phiên toà hoặc sapo. "
             "TextRank đôi khi lấy câu chú thích ảnh hoặc nhảy chuyên án.",
@@ -351,10 +352,10 @@ def story():
         P("9. Kết luận và hạn chế", S["h1"]),
         P(
             "Trên 100 bài, ViT5 ROUGE cao hơn Lead-3 và TextRank một chút; trên 500 bài hơn Lead-1 một chút "
-            "(0,2784 vs 0,2719). Đọc tay: abstractive vẫn ảo giác. Extractive an toàn về chữ, dễ lệch sapo.",
+            "(0,2784 vs 0,2719). Đọc tay 100 bài: ViT5 vẫn sai hoặc gán nhầm ở 24 bài. Extractive an toàn về chữ, dễ lệch sapo.",
             S["body"],
         ),
-        P("Hạn chế: đọc tay/lệch số trên 100 bài; ViT5 đã học Vietnews nên không tách khả năng mô hình với "
+        P("Hạn chế: đọc tay một lượt trên 100 bài, chưa có hai người chấm; đối chiếu số trên 100 bài; ViT5 đã học Vietnews nên không tách khả năng mô hình với "
           "việc đã thấy miền này; chưa đo latency. Không fine-tune trùng Vietnews.", S["body"]),
         P("10. Tài liệu", S["h1"]),
         P("1. Vietnews / VNDS: https://github.com/ThanhChinhBK/vietnews", S["bullet"]),

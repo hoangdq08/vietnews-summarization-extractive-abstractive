@@ -1,7 +1,47 @@
-# Phân tích lỗi (đọc tay, n=20)
+# Phân tích lỗi (đọc tay, n=100)
 
-Nguồn: `data/test_tokenized` (000001–000100) + `results/preds.json` + Lead-3/TextRank local.  
-Chỉ ghi lệch so với **gold** hoặc sai sự thật so với thân bài khi đọc được.
+Nguồn: `data/test_tokenized` bài 000001–000100, `results/preds.json`, Lead-3 và TextRank tính lại từ thân bài.
+
+Cách đọc: xem gold, ViT5, Lead-3 và TextRank của đủ 100 bài. Khi ViT5 có tên, số, địa điểm hoặc kết cục lạ thì mở thân bài. Một lượt đọc, không phải hai người chấm. Không gọi đây là human evaluation độc lập.
+
+24 bài dưới đây là chỗ ViT5 sai sự kiện hoặc gán nhầm so với thân bài. Bài còn lại không được kể là “đúng hết”. Nhiều bài chỉ bỏ số hoặc mức án trong sapo. Phần sót số đã ghi ở `results/number_diff_verified.md`.
+
+## 24 bài ViT5 sai hoặc gán nhầm so với thân bài
+
+| ID | Thân bài | ViT5 |
+|---|---|---|
+| 000001 | Hồ Xuân Huy, trong bài gọi là Huy | Bùi Quang Huy, tức Vũ nhôm |
+| 000003 | Bài điều tra thuốc rao bán, bác sĩ nói quảng cáo phi lý | “chất lượng tốt, khéo léo tận dụng thì sẽ thành công” |
+| 000004 | Luật sư nói quyết định của VEC “vô lý và nực cười” | “vô cùng lý và nực cười” |
+| 000009 | Đang điều tra, bắt 24 người, thu hơn 230 triệu | “phá thành công”, “quy mô lớn nhất trong lịch sử” |
+| 000011 | Thuê xe chở máy ủi | Trộm xe bồn |
+| 000014 | Kon Plông | Kon long |
+| 000015 | Huấn đâm em vợ | Em vợ đâm nạn nhân |
+| 000018 | Bệnh trầm cảm, không có chữ di căn | “trầm trọng”, “không có dấu hiệu di căn” |
+| 000021 | Nguyễn Văn Được dùng dây dù | “được cho là” |
+| 000027 | Ông H. và ông T. thương rất nặng | Viết hai ông tử vong |
+| 000034 | Quảng Trạch, Quảng Bình | Quảng Tây |
+| 000036 | 27 tỷ và 1.750.000 USD là lời Nguyễn Văn Dương | Gán thành lời ông Phan Văn Vĩnh khai cho ông Vĩnh |
+| 000042 | 16 tỷ là vụ khác trong cùng bài | Gán 16 tỷ vào vụ thuê căn hộ, gọi Ngọc Anh là nạn nhân |
+| 000048 | Công an kết luận phòng vệ chính đáng | Trung “chỉ có ý định giết người” |
+| 000049 | Thiếu tá biên phòng hi sinh | “thiếu niên” trúng đạn |
+| 000052 | Lê Văn H. đâm anh Lan. Thiếu nữ là bạn gái đến đám tang | “thiếu nữ đâm chết người” |
+| 000060 | Con trai đâm chết mẹ | Thêm người tình bị thương |
+| 000069 | Cửu 20 năm, Hoan 14 năm | Hai bị cáo cùng 14 năm, tên lặp |
+| 000075 | Vụ trộm tại Samsung Display | Ngày 2/10, “làng quê Việt Nam” |
+| 000079 | Không có mốc chưa đến 18 tuổi | Cầm đầu “chưa đến 18 tuổi” |
+| 000081 | Không có 28/3 và không có nguồn Tuổi Trẻ | Sáng 28/3, nguồn Tuổi Trẻ |
+| 000082 | Không có 3 tầng, 1.500 m², Liên Chiểu | Nhà 3 tầng, 1.500 m², Liên Chiểu |
+| 000090 | Công an tạm giữ Trần Tuấn Đạt | “Nạn nhân bị đâm tử vong đang được công an tạm giữ” |
+| 000091 | “Tin sét đánh” nói về con trai bị giết. Con gái mất tích là chuyện khác | Mẹ mất con gái vì sét đánh |
+
+Riêng 000083, ViT5 lặp “vô vô” đến vỡ câu. Không xếp vào 24 bài trên.
+
+000031 không đưa vào bảng. Thân bài có người mang dao, súng hơi và chai xăng. Gold không kể vũ khí. Lượt đọc 20 bài trước ghi nhầm là bịa dao và súng.
+
+Lead-3 và TextRank lấy câu có sẵn trong thân bài, nên không bịa tên hay đồ vật theo kiểu bảng trên. Hai cách này vẫn lệch sapo khi câu lấy ra chưa phải kết luận của bài. TextRank còn lấy chú thích ảnh hoặc trộn tin, như 000006, 000066, 000076 và 000077.
+
+Phần dưới là 20 bài đã viết chi tiết trước khi đọc đủ 100. Giữ lại làm ví dụ, không cộng thêm vào 24.
 
 ---
 
@@ -65,8 +105,8 @@ Chỉ ghi lệch so với **gold** hoặc sai sự thật so với thân bài kh
 ## 000031.txt.seg — Đốt xe CSGT
 
 - Gold: tẩm xăng đốt ô tô Đại uý CSGT trước trụ sở, tẩu thoát.
-- ViT5: “mang theo **dao và khẩu súng dài (như súng hơi)**” — không có trong gold; Lead-3/TextRank cũng không kể súng/dao.
-- Hệ: ViT5. Loại: bịa chi tiết vũ khí.
+- ViT5: “mang theo dao và khẩu súng dài (như súng hơi)”. Gold không kể vũ khí, nhưng thân bài có người mang dao, súng hơi và chai xăng. Không tính là bịa.
+- Hệ: không xếp ViT5 vào lỗi bịa ở bài này.
 - Lead-3 / TextRank: đúng đốt xe Kia Morning.
 
 ## 000036.txt.seg — Đồng hồ Rolex Phan Văn Vĩnh
@@ -158,22 +198,8 @@ Chỉ ghi lệch so với **gold** hoặc sai sự thật so với thân bài kh
 
 ---
 
-## Tổng (20 bài)
+## Ghi chú sau khi đọc đủ 100
 
-| Hiện tượng | Số bài (ước, theo ghi trên) | Hệ |
-|---|---|---|
-| Sai tên / gãy tên / gán nhầm người | 4 | ViT5: 000001, 000021, 000036; (000011 đối tượng) |
-| Bịa hoặc đảo sự thật | 4 | ViT5: 000003, 000011, 000031, 000036 |
-| Cắt mất ý gold | nhiều | Lead-3: 000051, 000066, 000081, 000046; ViT5: 000006, 000056, 000071 |
-| Lặp / câu vụng | 3 | ViT5: 000016, 000066, 000076 |
-| Trộn nhiều tin / caption | 3 | TextRank: 000066, 000076, 000006 |
-| Không thấy lỗi rõ so với gold | 1 | 000026 |
+Bảng 24 bài ở đầu file là kết quả dùng khi bảo vệ. Bảng ước của 20 bài viết chi tiết không còn dùng làm số công bố, vì 000031 đã được sửa và mẫu 20 không phải cả tập.
 
-**Rút ra (cho slide, không phóng đại):**
-
-1. ROUGE ViT5 cao hơn một chút trên 100 bài **không** bảo đảm đúng tên/số — 000001, 000011, 000036 là ví dụ.
-2. Lead-3 an toàn về sự thật (câu lấy từ bài) nhưng hay **lệch gold** vì gold là sapo/kết luận, 3 câu đầu thân bài là diễn biến.
-3. TextRank đôi khi nhảy giữa đoạn hoặc trộn tin trong bài tổng hợp (000066).
-4. Gold dạng “an ninh 24h” (nhiều tin một bài) cả ba hệ đều yếu.
-
-Đối chiếu số trên đủ 100 bài (không lấy 64/100 của regex): `results/number_diff_verified.md` — 7 bài sai/ảo giác số, 13 bài sót án/tiền/số nạn nhân. 000001 và 000036 ở trên khớp nhóm đó.
+Đối chiếu số trên đủ 100 bài vẫn ở `results/number_diff_verified.md`: 7 bài sai hoặc gán nhầm số, 13 bài sót số then chốt của sapo. Không cộng hai cột đó thành một tỷ lệ.
