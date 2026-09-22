@@ -88,7 +88,7 @@ function darkHead(text) {
     x: 0.7, y: 4.7, w: 11, h: 1.25,
     fontFace: FONT.sans, fontSize: 16, color: C.body, margin: 0,
   });
-  s.addNotes("Nhóm so sánh hai cách tóm tắt tin tiếng Việt. Rút trích lấy câu có sẵn. Tóm lược dùng checkpoint ViT5 có sẵn. Nhóm không huấn luyện model. Câu hỏi là trên cùng tập test, ba cách khác nhau thế nào về ROUGE, và khi đọc bài thì mỗi cách sai kiểu gì.");
+  s.addNotes("Em chào thầy và các bạn. Nhóm em làm đề tài so sánh tóm tắt rút trích và tóm lược trên tin tiếng Việt. Rút trích là lấy câu có sẵn trong bài. Tóm lược thì nhóm dùng checkpoint ViT5 đã có sẵn, không train thêm. Nhóm muốn xem trên cùng tập test, ba cách này điểm ROUGE khác nhau thế nào, và mở bài ra thì mỗi cách sai ra sao.");
 }
 
 // 2 Đặt vấn đề
@@ -115,7 +115,7 @@ function darkHead(text) {
     });
   });
   footer(s, 2);
-  s.addNotes("Người đọc không kịp đọc hết bài báo. Máy có thể rút thành vài câu. Việc của nhóm là xem cách lấy câu sẵn và cách viết câu mới giữ ý đến đâu, chứ không phải xây một model mới.");
+  s.addNotes("Bài báo thường dài vài trăm từ. Người đọc nhiều khi chỉ cần vài câu nói đúng việc chính. Chương trình lấy thân bài rồi viết lại cho ngắn. Bản ngắn không phải lúc nào cũng đúng ý. Có bài bị mất ý quan trọng. Có bài bị thêm chi tiết mà bài gốc không nói. Ra được bản tóm tắt chưa đủ. Nhóm còn phải xem nó giữ ý đến đâu.");
 }
 
 // 3 Mục tiêu
@@ -146,7 +146,7 @@ function darkHead(text) {
     });
   });
   footer(s, 3);
-  s.addNotes("Mục tiêu là so sánh ba cách trên cùng tập, rồi đọc tay để xem mỗi cách sai kiểu gì. Mỗi lần nhóm tóm một bài. Bài giảng còn có hướng gom nhiều bài. Đồ án này làm từng bài.");
+  s.addNotes("Nhóm chạy ba cách trên dữ liệu Vietnews, chấm bằng ROUGE, rồi đọc một số bài xem sai chỗ nào. Mỗi lần chỉ tóm một bài. Bài giảng có hướng gom nhiều bài rồi tóm chung. Đồ án này không đi hướng đó. Nhóm để từng bài một cho dễ so.");
 }
 
 // 4 Input output
@@ -177,7 +177,7 @@ function darkHead(text) {
     });
   });
   footer(s, 4);
-  s.addNotes("Đầu vào là thân bài. Đầu ra là bản tóm tắt ngắn. Sapo chỉ dùng để chấm. Nếu đưa sapo vào model rồi so lại với sapo, hệ đã biết đáp án. Khi kiểm nội dung, nhóm vẫn đọc thân bài, vì sapo không phải mọi sự thật trong bài.");
+  s.addNotes("Đầu vào là thân một bài tiếng Việt. Tiêu đề chỉ để biết đang nói bài nào. Đầu ra là bản ngắn. Lead-3 với TextRank lấy câu có sẵn trong thân bài. ViT5 viết câu mới. Lúc chấm, nhóm so với sapo. Sapo chỉ là bản mẫu để tính ROUGE, không đưa vào ViT5. Đưa sapo vào rồi so lại với chính sapo thì model đã thấy đáp án trước. Muốn biết một câu có đúng việc không thì đọc lại thân bài, vì sapo không ghi hết chi tiết.");
 }
 
 // 5 Hai cách + ví dụ minh họa
@@ -214,7 +214,7 @@ function darkHead(text) {
     fontFace: FONT.sans, fontSize: 18, color: C.body, margin: 0,
   });
   footer(s, 5);
-  s.addNotes("Rút trích giữ nguyên câu trong bài. Tóm lược viết câu mới, nên có thể viết sai sự việc. Ngay trong tập test, bài 000011 nói máy ủi, còn ViT5 viết xe bồn. Slide đọc tay sẽ đặt bài này cạnh một bài sai tên.");
+  s.addNotes("Rút trích giữ nguyên câu trong bài, nên ít bịa chữ mới. Đổi lại, câu lấy ra có thể cụt, hoặc không sát sapo. Tóm lược viết câu mới, nghe xuôi hơn, nhưng dễ sai tên, sai số, hoặc đảo người làm việc. Trong tập test, bài 000011 kể việc thuê xe chở máy ủi. Câu rút trích vẫn giữ ý đó. ViT5 viết thành trộm xe bồn.");
 }
 
 // 6 Dataset
@@ -242,7 +242,7 @@ function darkHead(text) {
     });
   });
   footer(s, 6);
-  s.addNotes("Nhóm dùng bộ Vietnews đã công bố và checkpoint ViT5 đã công bố. Phần chấm là test đã tách từ. Thử trên 100 bài đầu, số báo cáo là 500 bài đầu, theo thứ tự tên file.");
+  s.addNotes("Nhóm dùng bộ Vietnews đã công bố, GitHub ThanhChinhBK/vietnews. Model là checkpoint VietAI vit5-base-vietnews-summarization, đi cùng bài NAACL 2022. Phần nhóm chấm là tập test. Trong file, từ đã tách sẵn bằng gạch dưới, ví dụ học_sinh. Nhóm thử trước 100 bài đầu. Số đưa vào báo cáo là 500 bài đầu, theo thứ tự tên file, từ 000001 đến 000500.");
 }
 
 // 7 Pipeline
@@ -274,7 +274,7 @@ function darkHead(text) {
     });
   });
   footer(s, 7);
-  s.addNotes("Pipeline có bốn bước. Đọc file, tách câu, lấy bản ViT5 đã sinh, rồi chấm ROUGE. Lead-3 và TextRank tính tại máy. ViT5 không chạy lại lúc bảo vệ. Demo vì thế không cần Kaggle.");
+  s.addNotes("Từ file bài báo đến một điểm ROUGE, nhóm đi bốn bước. Đọc file, lấy tiêu đề, sapo và thân bài. Rồi tách câu. Lead-3 và TextRank tính luôn trên máy từ các câu đó. ViT5 lấy câu đã viết sẵn, lưu trong file, lúc bảo vệ không chạy model lại. Cuối cùng so với sapo bằng ROUGE-1, ROUGE-2 và ROUGE-L.");
 }
 
 // 8 Tiền xử lý
@@ -301,7 +301,7 @@ function darkHead(text) {
     });
   });
   footer(s, 8);
-  s.addNotes("Trong file, học_sinh là một từ có sẵn. Nhóm đọc dấu đó. Khi một dòng chưa hết câu, nhóm nối đến dấu chấm. Lúc chấm, dấu gạch dưới đổi thành khoảng trắng để so với sapo.");
+  s.addNotes("Nhóm không tách từ lại. File Vietnews đã ghi học_sinh là một từ. Mỗi dòng thường là một câu. Dòng nào chưa hết câu thì nối đến khi gặp dấu chấm. Lúc chấm, nhóm đổi gạch dưới ở cả bản tóm tắt lẫn sapo thành khoảng trắng, rồi tách theo khoảng trắng. Làm vậy thì chữ của ViT5 và chữ của sapo so được với nhau.");
 }
 
 // 9 Lead-3
@@ -329,7 +329,7 @@ function darkHead(text) {
     fontFace: FONT.sans, fontSize: 18, color: C.body, margin: 0,
   });
   footer(s, 9);
-  s.addNotes("Lead-3 là mốc đơn giản. Nó lấy ba câu đầu, không học gì. Tin tiếng Việt thường mở bằng ý chính, nên mốc này có thể điểm khá cao. Nhóm dùng nó để xem TextRank và ViT5 có hơn thật không.");
+  s.addNotes("Lead-3 lấy tối đa ba câu đầu thân bài. Bài có hai câu thì lấy hai câu. Không xếp lại, cũng không chấm câu nào quan trọng hơn. Tin thường nêu việc chính ngay câu đầu, nên cách này điểm khá cao dù rất đơn giản. Nhóm lấy nó làm mốc, xem TextRank và ViT5 có hơn được không.");
 }
 
 // 10 TextRank
@@ -361,7 +361,7 @@ function darkHead(text) {
     });
   });
   footer(s, 10);
-  s.addNotes("TextRank không train. Với mỗi bài, nhóm biến câu thành TF-IDF, tính độ giống bằng cosine, rồi PageRank 40 vòng. Ba câu điểm cao được trả về đúng thứ tự trong bài. Cách này vẫn là rút trích. Chưa có bước phạt hai câu trùng ý.");
+  s.addNotes("TextRank chọn câu ngay trong bài đang tóm, không học tham số từ bài khác. Mỗi câu là một vector TF-IDF. Cosine đo hai câu giống nhau đến đâu. PageRank chạy 40 vòng, damping 0.85. Câu nào giống nhiều câu khác thì điểm cao. Nhóm lấy ba câu điểm cao và giữ đúng thứ tự trong bài. Vẫn là rút trích. Nhóm chưa phạt hai câu trùng ý.");
 }
 
 // 11 ViT5
@@ -389,7 +389,7 @@ function darkHead(text) {
     });
   });
   footer(s, 11);
-  s.addNotes("ViT5 là checkpoint VietAI đã học tóm tắt Vietnews. Nhóm không train tiếp. Khi sinh, nhóm đưa thân bài kèm ký hiệu kết thúc, giới hạn input 1024 token và output 256 token, không thêm prefix. 256 là giới hạn token của API, không phải 256 từ tiếng Việt.");
+  s.addNotes("ViT5 ở đây là checkpoint VietAI/vit5-base-vietnews-summarization. Checkpoint này đã được train để tóm tắt tin Vietnews. Nhóm chỉ đưa bài vào và lấy câu tóm tắt ra. Trọng số giữ nguyên, không cập nhật thêm. Đầu vào là thân bài, thêm ký hiệu kết thúc, dài tối đa 1.024 token. Bản tóm tắt dài tối đa 256 token. Số 256 là giới hạn lúc gọi model, không phải 256 từ tiếng Việt.");
 }
 
 // 12 Thiết lập
@@ -416,7 +416,7 @@ function darkHead(text) {
     valign: "middle",
   });
   footer(s, 12);
-  s.addNotes("Nhóm chấm 100 bài trước, rồi mở rộng thành 500 bài đầu. Cả ba hệ dùng cùng danh sách bài và cùng cách ROUGE. ViT5 được sinh một lần trên Kaggle rồi lưu lại. Lúc bảo vệ chỉ đọc file đó. Nhóm không lấy số trong paper ra so, vì cách chấm của paper chưa đối chiếu đủ.");
+  s.addNotes("Ba cách nhìn cùng các bài test, và chấm cùng một kiểu. Tập 100 là bài 000001 đến 000100, nhóm chạy trước. Tập 500 là bài 000001 đến 000500, trong đó có cả 100 bài kia. Điểm báo cáo là F1 của ROUGE-1, ROUGE-2 và ROUGE-L. Câu ViT5 sinh một lần trên Kaggle rồi lưu file. Lúc đứng bảo vệ, nhóm chỉ đọc file đó.");
 }
 
 // 13 Bảng ROUGE 500
@@ -450,7 +450,7 @@ function darkHead(text) {
     fontFace: FONT.sans, fontSize: 18, color: C.body, margin: 0,
   });
   footer(s, 13);
-  s.addNotes("Trên 500 bài, ROUGE-1 của Lead-3 là 0.2569, TextRank 0.2499, ViT5 0.2784. Lead-1 đã là 0.2719, nên ViT5 chỉ hơn một câu đầu một ít. Số này là của tập nhóm đo. Bài báo chấm theo cách khác, nên nhóm để hai bảng đứng riêng.");
+  s.addNotes("Trên 500 bài, ViT5 cao hơn Lead-3 và TextRank ở cả ba cột. ROUGE-1 của Lead-3 là 0.2569, TextRank là 0.2499, ViT5 là 0.2784. TextRank không cao hơn cách lấy ba câu đầu. Chỉ lấy một câu đầu thì ROUGE-1 đã là 0.2719. ViT5 chỉ hơn mức đó một ít. Đây là số nhóm tự tính. Bài báo chấm theo cách khác, nên nhóm không kéo bảng của bài báo ra đặt cạnh.");
 }
 
 // 14 Hai ví dụ
@@ -478,7 +478,7 @@ function darkHead(text) {
     fontFace: FONT.sans, fontSize: 18, color: C.body, margin: 0,
   });
   footer(s, 14);
-  s.addNotes("Hai lỗi đọc từ thân bài, không chỉ từ sapo. Bài 000021 viết Nguyễn Văn Được. ViT5 tách thành được cho là, nhưng ROUGE-1 vẫn 0.5161 vì nhiều chữ khác trùng. Bài 000011 nói máy ủi. ViT5 viết xe bồn, và xe bồn không có trong bài. Vì vậy nhóm không dừng ở bảng điểm.");
+  s.addNotes("Nhìn bảng chưa đủ. Nhóm mở thân bài ra đọc. Bài 000021, trong bài Nguyễn Văn Được dùng dây dù siết cổ bạn gái. ViT5 viết thành Nguyễn Văn được cho là đã dùng dây dù. Tên Được bị cắt thành được cho là. Bài này vẫn có ROUGE-1 bằng 0.5161 trên bảng 100 bài, vì nhiều chữ khác vẫn trùng. Bài 000011, thân bài nói Nguyễn Văn Tú thuê xe chở máy ủi đem bán. ViT5 viết trộm được xe bồn. Xe bồn không có trong thân bài. Hai chỗ này nhóm đối với bài gốc, không chỉ nhìn sapo.");
 }
 
 // 15 Demo
@@ -505,7 +505,7 @@ function darkHead(text) {
     });
   });
   footer(s, 15);
-  s.addNotes("Mở demo bằng Docker: docker run --rm -p 7860:7860 vietnews-demo, rồi vào 127.0.0.1 cổng 7860. Không cài Python trên máy bảo vệ. Trên slide chỉ nói ba cột là gì. Khi đứng máy, chọn một bài, đọc thân bài, rồi chỉ một chỗ ViT5 khác bài.");
+  s.addNotes("Demo để ba bản cạnh nhau, cùng một bài. Lead-3 là ba câu đầu. TextRank là ba câu được chọn trong thân bài. ViT5 là câu viết mới, lấy từ kết quả đã lưu. Khi đứng máy: docker run --rm -p 7860:7860 vietnews-demo, mở 127.0.0.1 cổng 7860, chọn một bài, đọc thân bài, rồi chỉ một chỗ ViT5 khác bài. Không đọc các bước này thành lời. Máy bảo vệ không cần cài Python.");
 }
 
 // 16 Kết luận
@@ -528,12 +528,12 @@ function darkHead(text) {
     x: 7.05, y: 1.7, w: 5.5, h: 0.4,
     fontFace: FONT.sans, fontSize: 16, color: C.accent, margin: 0,
   });
-  s.addText("ROUGE chỉ đo phần chữ trùng với sapo.\n\nNhóm mới đọc khoảng 20 bài.\n\nBài báo chấm theo cách khác, nên không đặt bảng đó cạnh bảng của nhóm.", {
+  s.addText("ROUGE chỉ đo phần chữ trùng với sapo.\n\nNhóm mới đọc khoảng 100 bài.\n\nBài báo chấm theo cách khác, nên không đặt bảng đó cạnh bảng của nhóm.", {
     x: 7.05, y: 2.3, w: 5.5, h: 3.8,
     fontFace: FONT.sans, fontSize: 18, color: C.body, margin: 0,
   });
   footer(s, 16);
-  s.addNotes("Trên 500 bài ViT5 nhỉnh về chữ trùng, nhưng sát Lead-1, và khi đọc bài vẫn sai tên hoặc sai đồ vật. Nhóm mới đọc tay khoảng 20 bài. Checkpoint giữ nguyên trọng số lúc chạy.");
+  s.addNotes("Trên 500 bài, ViT5 trùng chữ với sapo nhiều hơn Lead-3 và TextRank. So với một câu đầu thì chỉ hơn một ít. Lead-3 vẫn là mốc mạnh, vì tin hay để ý chính ở đầu bài. Đọc tay thì ViT5 vẫn sai tên và sai đồ vật. ROUGE chỉ đo phần chữ trùng với sapo. Nhóm mới đọc khoảng 100 bài, chưa đọc hết 500. Cách bài báo chấm khác cách nhóm chấm, nên hai bảng không đặt cạnh nhau.");
 }
 
 // 17 Hướng phát triển
@@ -543,7 +543,7 @@ function darkHead(text) {
   header(s, "17", "NẾU LÀM TIẾP", "Ngoài phạm vi hiện tại");
   title(s, "Ba việc có thể làm sau đồ án này");
   const next = [
-    ["01", "Đọc thêm bài", "Đếm lỗi tên, số và đồ vật. Hiện nhóm mới đọc khoảng 20 bài."],
+    ["01", "Đọc thêm bài", "Đếm lỗi tên, số và đồ vật. Hiện nhóm mới đọc khoảng 100 bài."],
     ["02", "Bài gồm nhiều tin", "Một sapo có thể gom vài sự việc. Cần tách tin trước khi tóm."],
     ["03", "Nếu có train sau", "Các bài đang dùng để chấm sẽ để riêng, không đưa vào lúc cập nhật model."],
   ];
@@ -564,7 +564,7 @@ function darkHead(text) {
     });
   });
   footer(s, 17);
-  s.addNotes("Nếu làm tiếp, nhóm muốn đọc lỗi có hệ thống hơn, và xử lý những bài sapo gom nhiều tin. Nhóm không train thêm trên chính tập test đang dùng để chấm. Những việc này nằm ngoài phạm vi bản bảo vệ hôm nay.");
+  s.addNotes("Nếu làm tiếp, nhóm muốn đọc thêm bài và đếm lỗi tên, lỗi số, lỗi đồ vật. Hiện mới khoảng 100 bài. Có sapo gom vài sự việc vào một đoạn. Những bài đó nên tách tin trước khi tóm. Nếu sau này có train, các bài đang dùng để chấm sẽ để riêng, không đưa vào lúc cập nhật model. Ba việc này nhóm chưa làm trong phần hôm nay.");
 }
 
 // 18 Tài liệu
@@ -592,7 +592,7 @@ function darkHead(text) {
     });
   });
   footer(s, 18);
-  s.addNotes("Bốn nguồn này để kiểm dữ liệu, bài báo ViT5, checkpoint và code của nhóm. Hết slide này là hết bài nói.");
+  s.addNotes("Bốn nguồn này để thầy và các bạn đối chiếu. Dữ liệu Vietnews ở github.com/ThanhChinhBK/vietnews. Bài ViT5 ở aclanthology.org/2022.naacl-srw.18. Checkpoint ở huggingface.co/VietAI/vit5-base-vietnews-summarization. Code nhóm ở github.com/hoangdq08/vietnews-summarization-extractive-abstractive. Em xin dừng phần trình bày ở đây.");
 }
 
 pres.writeFile({ fileName: path.join(__dirname, "CS221-Vietnews-bao-ve.pptx") })
