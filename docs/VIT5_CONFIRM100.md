@@ -53,4 +53,4 @@ Không công bố tỷ lệ factuality như ground truth: rubric đã dùng sau 
 
 Có thể đưa cả A/B vào báo cáo như một kết quả thực nghiệm có trade-off, với ví dụ điểm số và lỗi. Bước kế tiếp là thành viên nhóm kiểm tra lại bảng này theo rubric, nhất là U, trước khi quyết định tích hợp. Không train để chữa lỗi khi chưa xác định nguyên nhân và dữ liệu phù hợp.
 
-Chưa kiểm định thống kê, chưa đánh giá toàn100 bài thủ công. Cảnh báo LibreSSL/T5 legacy/EOS/early_stopping vẫn còn, được giữ nguyên để quan sát. Không commit, Git diff/status còn cần xác minh khi Xcode license được giải quyết.
+Chưa kiểm định thống kê, chưa đánh giá toàn bộ 100 bài thủ công. Cảnh báo LibreSSL/T5 legacy/EOS/early_stopping vẫn còn, được giữ nguyên để quan sát.

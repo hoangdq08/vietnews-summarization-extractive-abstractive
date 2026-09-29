@@ -11,12 +11,10 @@ Checkpoint revision: `a54febd011c0a39ce49ceacd9225e63ef3a73ad3`. Chi tiết phi�
 Lệnh chạy từ thư mục project, chọn output mới vì runner từ chối ghi đè:
 
 ```bash
-HF_HOME="$JCODE_SCRATCH_DIR/vietnews-hf-cache" \
-  "$JCODE_SCRATCH_DIR/vietnews-vit5-ab-venv/bin/python" \
-  experiments/vit5_input_ab.py --limit 20 --output results/vit5_input_ab_new
+python experiments/vit5_input_ab.py --limit 20 --output results/vit5_input_ab_new
 ```
 
-Môi trường inference riêng trong scratch, không thay dependency của demo. Runner dùng source preprocess/evaluate hiện tại. Không train, không đổi notebook hay baseline cũ.
+Chạy trong virtualenv riêng có `torch` và `transformers==4.44.2`, không thay dependency của demo. Runner dùng source preprocess/evaluate hiện tại. Không train, không đổi notebook hay baseline cũ.
 
 ## Kết quả đo
 
@@ -54,4 +52,4 @@ Có bằng chứng trên mẫu này rằng thay `_` bằng space tăng overlap v
 
 Đề xuất tiếp: chấm factuality theo rubric trên các bài cố định, kiểm tra gold có được body hỗ trợ và xác nhận kết quả trên tập đánh giá độc lập trước khi chốt preprocessing. Không chọn tham số để tối đa điểm của 20 bài này.
 
-Cảnh báo runtime còn thấy: LibreSSL/urllib3, tokenizer T5 legacy, early_stopping không có tác dụng với num_beams1. Giữ early_stopping để khớp notebook, không tắt cảnh báo. Git diff/status vẫn bị Xcode license trên máy; không commit.
+Cảnh báo runtime còn thấy: LibreSSL/urllib3, tokenizer T5 legacy, early_stopping không có tác dụng với num_beams1. Giữ early_stopping để khớp notebook, không tắt cảnh báo.
