@@ -1,6 +1,6 @@
 # Vietnews summarization
 
-**Extractive vs abstractive summarization on Vietnamese news**, evaluated with ROUGE *and* a manual factuality review. Course project for CS221 (UIT, VNU-HCM), team of 3.
+**Extractive vs abstractive summarization on Vietnamese news**, evaluated with ROUGE *and* a manual factuality review. Course project for **CS221.F31.LT.TTNT, Xử lý ngôn ngữ tự nhiên** (NLP), instructor: TS. Đặng Văn Thìn, UIT (VNU-HCM), team of 3.
 
 ![Gradio demo: gold summary vs Lead-3, TextRank and ViT5 side by side](docs/img/demo.png)
 
