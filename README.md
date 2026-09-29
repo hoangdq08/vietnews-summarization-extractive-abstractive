@@ -1,5 +1,28 @@
 # Vietnews summarization
 
+**Extractive vs abstractive summarization on Vietnamese news**, evaluated with ROUGE *and* a manual factuality review. Course project for CS221 (UIT, VNU-HCM), team of 3.
+
+![Gradio demo: gold summary vs Lead-3, TextRank and ViT5 side by side](docs/img/demo.png)
+
+**Key findings** (Vietnews `test_tokenized`, first 500 articles, ROUGE F1):
+
+| System | ROUGE-1 | ROUGE-2 | ROUGE-L |
+|---|---|---|---|
+| Lead-1 | 0.2719 | 0.1305 | 0.2092 |
+| TextRank-3 | 0.2499 | 0.1198 | 0.1815 |
+| ViT5 (off-the-shelf) | **0.2784** | **0.1474** | **0.2233** |
+| Oracle-3 (upper bound) | 0.4646 | 0.2793 | 0.3410 |
+
+- ViT5 edges out a strong Lead-1 baseline, and Oracle-3 shows extractive methods still have large headroom.
+- **ROUGE is not factuality.** A manual read of 100 ViT5 outputs found 24 articles with wrong or misattributed facts (names, numbers, outcomes). See [`results/error_analysis.md`](results/error_analysis.md).
+- **Input preprocessing matters.** Replacing word-segmentation underscores with spaces raises ViT5 ROUGE-1 from 0.2784 to 0.3124 on 500 articles and cuts truncated inputs from 120 to 38. It is exploratory only and not adopted in the main pipeline. See [`docs/VIT5_INPUT_AB.md`](docs/VIT5_INPUT_AB.md).
+
+**Run the demo:** `docker build -t vietnews-demo . && docker run --rm -p 7860:7860 vietnews-demo`, then open http://127.0.0.1:7860 (no GPU needed).
+
+*The rest of this README is in Vietnamese.*
+
+---
+
 So sánh tóm tắt **rút trích** (Lead-n, TextRank) và **tóm lược** (ViT5) trên tin tức tiếng Việt.
 
 Input: thân bài đã tách từ. Output: bản tóm tắt ngắn + ROUGE so với sapo (gold). Demo Gradio ba cột, chạy local hoặc Docker — không cần GPU lúc xem.
