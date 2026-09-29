@@ -586,7 +586,7 @@ function darkHead(text) {
     ["Vietnews", "github.com/ThanhChinhBK/vietnews"],
     ["ViT5", "aclanthology.org/2022.naacl-srw.18"],
     ["Checkpoint", "huggingface.co/VietAI/vit5-base-vietnews-summarization"],
-    ["Repo nhóm", "github.com/hoangdq08/vietnews-summarization-extractive-abstractive"],
+    ["Repo nhóm", "github.com/hoangdq08/uit-vietnews-summarization"],
   ];
   refs.forEach((r, i) => {
     const y = 1.5 + i * 1.3;
@@ -601,7 +601,7 @@ function darkHead(text) {
     });
   });
   footer(s, 18);
-  s.addNotes("Bốn nguồn này để thầy và các bạn đối chiếu. Dữ liệu Vietnews ở github.com/ThanhChinhBK/vietnews. Bài ViT5 ở aclanthology.org/2022.naacl-srw.18. Checkpoint ở huggingface.co/VietAI/vit5-base-vietnews-summarization. Code nhóm ở github.com/hoangdq08/vietnews-summarization-extractive-abstractive. Em xin dừng phần trình bày ở đây.");
+  s.addNotes("Bốn nguồn này để thầy và các bạn đối chiếu. Dữ liệu Vietnews ở github.com/ThanhChinhBK/vietnews. Bài ViT5 ở aclanthology.org/2022.naacl-srw.18. Checkpoint ở huggingface.co/VietAI/vit5-base-vietnews-summarization. Code nhóm ở github.com/hoangdq08/uit-vietnews-summarization. Em xin dừng phần trình bày ở đây.");
 }
 
 pres.writeFile({ fileName: path.join(__dirname, "CS221-Vietnews-bao-ve.pptx") })

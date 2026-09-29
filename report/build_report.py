@@ -149,7 +149,7 @@ def story():
             "Đỗ Quốc Hoàng — 26410043",
             S["cover_names"],
         ),
-        P("GitHub: github.com/hoangdq08/vietnews-summarization-extractive-abstractive", S["caption"]),
+        P("GitHub: github.com/hoangdq08/uit-vietnews-summarization", S["caption"]),
         PageBreak(),
     ]
 
@@ -367,7 +367,7 @@ def story():
         P("3. Lin, C.-Y. (2004). ROUGE: A package for automatic evaluation of summaries.", S["bullet"]),
         P("4. Mihalcea, R. &amp; Tarau, P. TextRank.", S["bullet"]),
         P(
-            "5. Repo nhóm: https://github.com/hoangdq08/vietnews-summarization-extractive-abstractive",
+            "5. Repo nhóm: https://github.com/hoangdq08/uit-vietnews-summarization",
             S["bullet"],
         ),
         P(
